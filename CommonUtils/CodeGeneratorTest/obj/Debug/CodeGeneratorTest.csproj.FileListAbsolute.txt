@@ -1,0 +1,16 @@
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\CodeGeneratorTest.exe.config
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\CodeGeneratorTest.exe
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\CodeGeneratorTest.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\FigKey.CodeGenerator.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\Newtonsoft.Json.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\FigKey.Util.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\FigKey.Util.Extension.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\FigKey.CodeGenerator.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\Newtonsoft.Json.xml
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\FigKey.Util.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\bin\Debug\FigKey.Util.Extension.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.csprojAssemblyReference.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.csproj.CoreCompileInputs.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.csproj.CopyComplete
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.exe
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.pdb

@@ -1,0 +1,2 @@
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Application\obj\Debug\FigKey.Application.csprojAssemblyReference.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Application\obj\Debug\FigKey.Application.csproj.CoreCompileInputs.cache

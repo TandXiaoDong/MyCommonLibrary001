@@ -1,0 +1,13 @@
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\FigKey.CodeGenerator.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\FigKey.CodeGenerator.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\FigKey.Util.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\Newtonsoft.Json.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\FigKey.Util.Extension.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\FigKey.Util.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\Newtonsoft.Json.xml
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\bin\Debug\FigKey.Util.Extension.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csprojAssemblyReference.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csproj.CoreCompileInputs.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csproj.CopyComplete
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.pdb

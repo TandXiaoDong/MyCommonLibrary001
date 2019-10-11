@@ -1,0 +1,11 @@
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\bin\Debug\FigKey.Util.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\bin\Debug\FigKey.Util.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\bin\Debug\FigKey.Util.Extension.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\bin\Debug\Newtonsoft.Json.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\bin\Debug\FigKey.Util.Extension.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\bin\Debug\Newtonsoft.Json.xml
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.csprojAssemblyReference.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.csproj.CoreCompileInputs.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.csproj.CopyComplete
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.pdb

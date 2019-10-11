@@ -1,0 +1,6 @@
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.DataBase\bin\Debug\FigKey.DataBase.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.DataBase\bin\Debug\FigKey.DataBase.pdb
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.csprojAssemblyReference.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.csproj.CoreCompileInputs.cache
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.dll
+D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.pdb
