@@ -1710,11 +1710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WorkDocument\\companytype\\FigKey\\project\\FigKey\\CommonUtils\\CommonUtils\\CommonUtils\\CommonUtils.csproj",
+      "projectUniqueName": "D:\\WorkDocument\\MyRepository\\CommonRepository\\MyCommonLibrary001\\CommonUtils\\CommonUtils\\CommonUtils.csproj",
       "projectName": "CommonUtils",
-      "projectPath": "D:\\WorkDocument\\companytype\\FigKey\\project\\FigKey\\CommonUtils\\CommonUtils\\CommonUtils\\CommonUtils.csproj",
+      "projectPath": "D:\\WorkDocument\\MyRepository\\CommonRepository\\MyCommonLibrary001\\CommonUtils\\CommonUtils\\CommonUtils.csproj",
       "packagesPath": "C:\\Users\\tangxiaodong\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkDocument\\companytype\\FigKey\\project\\FigKey\\CommonUtils\\CommonUtils\\CommonUtils\\obj\\",
+      "outputPath": "D:\\WorkDocument\\MyRepository\\CommonRepository\\MyCommonLibrary001\\CommonUtils\\CommonUtils\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

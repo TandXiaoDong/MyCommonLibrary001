@@ -46,5 +46,11 @@
     <Compile Include="ZedGraph\ComGraph.cs" />
     <Compile Include="ZedGraph\ZedControlGraphMonitor.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
+      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
+      <Name>CommonUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

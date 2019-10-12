@@ -53,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FigKeyUtils", "FigKeyUtils"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13 CommonUtil", "13 CommonUtil", "{13399D47-A90D-480A-BAC1-F0A927A57133}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsTelerik", "WindowsFormsTelerik\WindowsFormsTelerik.csproj", "{A10041F9-794B-4344-B2E4-EE57E0589103}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{6455E3A9-4341-4E4D-BBE8-ACE46E1A60E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6455E3A9-4341-4E4D-BBE8-ACE46E1A60E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6455E3A9-4341-4E4D-BBE8-ACE46E1A60E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A10041F9-794B-4344-B2E4-EE57E0589103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A10041F9-794B-4344-B2E4-EE57E0589103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A10041F9-794B-4344-B2E4-EE57E0589103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A10041F9-794B-4344-B2E4-EE57E0589103}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,6 +122,7 @@ Global
 		{746970A7-0EE7-4EE7-802D-B50392A1502B} = {5BF58695-4516-4E69-ACCD-274A7F8FEFD3}
 		{6455E3A9-4341-4E4D-BBE8-ACE46E1A60E3} = {E0E45953-BF95-458A-B0B2-A8F2D44F4A7E}
 		{13399D47-A90D-480A-BAC1-F0A927A57133} = {5075D93F-CE83-4417-BEA9-580E592BF16D}
+		{A10041F9-794B-4344-B2E4-EE57E0589103} = {E0E45953-BF95-458A-B0B2-A8F2D44F4A7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B7749BF-36B7-4B34-9F03-B6AAF9CC206F}

@@ -58,6 +58,10 @@
     <Compile Include="Template\SingleTable.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
+      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
+      <Name>CommonUtils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FigKey.Util\FigKey.Util.csproj">
       <Project>{e6a51660-a125-47e3-a832-76d5ea7c0b7c}</Project>
       <Name>FigKey.Util</Name>
