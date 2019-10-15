@@ -50,6 +50,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CommonUtils\Lib\telerik\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CommonUtils\Lib\telerik\Telerik.WinControls.UI.dll</HintPath>
@@ -66,6 +68,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CommonUtils\Lib\telerik\TelerikExport.dll</HintPath>
     </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.6643.41644, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WeifenLuo.WinFormsUI.Docking.2.1.0\lib\net20\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonUI\AboutBox.cs">
@@ -74,11 +79,23 @@
     <Compile Include="CommonUI\AboutBox.designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonUI\AuthorithManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonUI\AuthorithManager.Designer.cs">
+      <DependentUpon>AuthorithManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonUI\Helper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CommonUI\Helper.Designer.cs">
       <DependentUpon>Helper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUI\LeftMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonUI\LeftMenu.Designer.cs">
+      <DependentUpon>LeftMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUI\RadAboutBox.cs">
       <SubType>Form</SubType>
@@ -104,8 +121,14 @@
     <EmbeddedResource Include="CommonUI\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonUI\AuthorithManager.resx">
+      <DependentUpon>AuthorithManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommonUI\Helper.resx">
       <DependentUpon>Helper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonUI\LeftMenu.resx">
+      <DependentUpon>LeftMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommonUI\RadAboutBox.resx">
       <DependentUpon>RadAboutBox.cs</DependentUpon>
@@ -118,6 +141,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\figkeyLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
