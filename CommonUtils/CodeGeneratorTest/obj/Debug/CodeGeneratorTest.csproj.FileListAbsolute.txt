@@ -14,3 +14,6 @@ D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGe
 D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.csproj.CopyComplete
 D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.exe
 D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.pdb
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.csprojAssemblyReference.cache
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.exe
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.pdb

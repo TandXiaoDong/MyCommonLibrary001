@@ -124,9 +124,9 @@ D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\Com
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.7.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.xml
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.7.2\Telerik.Windows.Zip.xml
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.csprojAssemblyReference.cache
-D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.csproj.CoreCompileInputs.cache
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.AssemblyInfoInputs.cache
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.AssemblyInfo.cs
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.csproj.CopyComplete
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.dll
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.pdb
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.csproj.CoreCompileInputs.cache

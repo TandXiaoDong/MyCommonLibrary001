@@ -64,10 +64,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(249, 567);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.BackColor = System.Drawing.Color.Black;
             this.Name = "LeftMenu";
             this.TabText = "菜单";
             this.Text = "菜单";

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormTelerik</RootNamespace>
     <AssemblyName>WindowsFormTelerik</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -103,6 +103,12 @@
     <Compile Include="CommonUI\RadAboutBox.Designer.cs">
       <DependentUpon>RadAboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonUI\RadFormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonUI\RadFormMenu.Designer.cs">
+      <DependentUpon>RadFormMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GridViewExportData\GridViewExport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonUI\RadAboutBox.resx">
       <DependentUpon>RadAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonUI\RadFormMenu.resx">
+      <DependentUpon>RadFormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

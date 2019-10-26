@@ -4,3 +4,8 @@ D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey
 D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.csproj.CoreCompileInputs.cache
 D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.dll
 D:\WorkDocument\companytype\FigKey\project\FigKey\CommonUtils\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.pdb
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\bin\Debug\FigKey.Util.Extension.dll
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\bin\Debug\FigKey.Util.Extension.pdb
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.csprojAssemblyReference.cache
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.dll
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.pdb

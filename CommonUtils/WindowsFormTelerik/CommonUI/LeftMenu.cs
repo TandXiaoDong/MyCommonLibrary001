@@ -12,6 +12,8 @@ using System.Reflection;
 using Telerik.WinControls.UI;
 using Telerik.WinControls;
 using Telerik.WinControls.Themes;
+using System.Runtime.InteropServices;
+using System.Drawing.Drawing2D;
 
 namespace WindowsFormTelerik.CommonUI
 {
@@ -209,6 +211,34 @@ namespace WindowsFormTelerik.CommonUI
             public string Menu_Id { get; set; }
             public int Menu_Img { get; set; }
             public string Menu_Tags { get; set; }
+        }
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetWindowDC(IntPtr hWnd);
+        [DllImport("user32.dll")]
+        private static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
+
+        private const int WM_NCPAINT = 0x949494;
+        private const int WM_NCACTIVATE = 0x949494;
+        private const int WM_NCLBUTTONDOWN = 0x949494;
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            Rectangle vRectangle = new Rectangle(3, 3, Width - 6, 21);
+            IntPtr vHandle = GetWindowDC(m.HWnd);
+            Graphics vGraphics = Graphics.FromHdc(vHandle);
+            vGraphics.FillRectangle(new LinearGradientBrush(vRectangle,
+                Color.Gray, Color.Black, LinearGradientMode.BackwardDiagonal),
+                vRectangle);
+
+            StringFormat vStringFormat = new StringFormat();
+            vStringFormat.Alignment = StringAlignment.Center;
+            vStringFormat.LineAlignment = StringAlignment.Center;
+            vGraphics.DrawString("LeftMenu", Font, Brushes.BlanchedAlmond,
+                vRectangle, vStringFormat);
+
+            vGraphics.Dispose();
+            ReleaseDC(m.HWnd, vHandle);
         }
     }
 }

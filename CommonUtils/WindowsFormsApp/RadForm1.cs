@@ -27,7 +27,7 @@ namespace WindowsFormsApp
             //this.IsMdiContainer = true;
             LeftMenu authorithManager = new LeftMenu(dockPanel);
             authorithManager.Show(dockPanel, DockState.DockLeft);
-            authorithManager.Text = "菜单";
+            authorithManager.BackColor = Color.Black;
         }
     }
 }

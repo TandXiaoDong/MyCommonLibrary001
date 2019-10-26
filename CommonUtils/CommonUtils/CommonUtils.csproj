@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Cogito.Core" Version="3.0.4" />
     <PackageReference Include="Cogito.Web.UI" Version="3.0.0" />
     <PackageReference Include="ICSharpCode.SharpZipLib.Patched" Version="0.86.5.1" />
     <PackageReference Include="iTextSharp" Version="5.5.13" />
