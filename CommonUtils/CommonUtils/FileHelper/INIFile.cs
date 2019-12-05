@@ -63,8 +63,8 @@ namespace CommonUtils.FileHelper
         {
             StringBuilder s = new StringBuilder(1024);
             GetPrivateProfileString(section, key, "", s, 1024, path);
-
-            string result = s.ToString().Replace(" ", "");
+            var result = s.ToString();
+            //string result = s.ToString().Replace(" ", "");
             if (result.Contains(";"))
             {
                 result = result.Substring(0, result.IndexOf(';'));

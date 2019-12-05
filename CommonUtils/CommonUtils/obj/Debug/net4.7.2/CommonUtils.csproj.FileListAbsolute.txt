@@ -129,4 +129,3 @@ D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\Com
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.csproj.CopyComplete
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.dll
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.pdb
-D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.csproj.CoreCompileInputs.cache

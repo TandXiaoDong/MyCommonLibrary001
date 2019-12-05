@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommonUtils.Logger;
+using CommonUtils.CalculateAndString;
 
-namespace CommonUtils.CalculateAndString
+namespace CommonUtils.ByteHelper
 {
     public class ConvertString
     {

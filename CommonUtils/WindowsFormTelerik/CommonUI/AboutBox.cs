@@ -20,7 +20,6 @@ namespace WindowsFormTelerik.CommonUI
         public AboutBox(string tText,string productName,string companyName,string copyRight,string descriple)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterParent;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Text = String.Format("关于 {0}", AssemblyTitle);
@@ -34,6 +33,7 @@ namespace WindowsFormTelerik.CommonUI
             this.copyRight = copyRight;
             this.companyName = companyName;
             this.descriple = descriple;
+            this.StartPosition = FormStartPosition.CenterParent;
         }
 
         #region 程序集特性访问器

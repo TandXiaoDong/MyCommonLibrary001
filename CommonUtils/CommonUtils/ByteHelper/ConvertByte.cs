@@ -113,12 +113,32 @@ namespace CommonUtils.ByteHelper
         }
         public static byte[] HexToByte(string msg)
         {
-            msg = msg.Replace(" ", "");
+            msg = msg.Replace(" ", "").Replace("-","");
 
             byte[] comBuffer = new byte[msg.Length / 2];
             for (int i = 0; i < msg.Length; i += 2)
             {
                 comBuffer[i / 2] = (byte)Convert.ToByte(msg.Substring(i, 2), 16);
+            }
+
+            return comBuffer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="startIndex">起始位索引</param>
+        /// <param name="endlen">离结束位的长度</param>
+        /// <returns></returns>
+        public static byte[] HexToByte(string msg,int startIndex,int toEndLen)
+        {
+            msg = msg.Replace(" ", "").Replace("-", "");
+
+            byte[] comBuffer = new byte[(msg.Length - startIndex - toEndLen) / 2];
+            for (int i = 0; i < msg.Length - startIndex - toEndLen; i += 2)
+            {
+                comBuffer[i / 2] = (byte)Convert.ToByte(msg.Substring(i + startIndex, 2), 16);
             }
 
             return comBuffer;
