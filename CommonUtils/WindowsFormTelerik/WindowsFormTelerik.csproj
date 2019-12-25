@@ -111,6 +111,7 @@
     <Compile Include="CommonUI\RadFormMenu.Designer.cs">
       <DependentUpon>RadFormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlCommon\GridDoubleBuffer.cs" />
     <Compile Include="ControlCommon\FontRool.cs" />
     <Compile Include="ControlCommon\RadGridViewProperties.cs" />
     <Compile Include="GridViewExportData\GridViewExport.cs" />
@@ -120,12 +121,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
-      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
-      <Name>CommonUtils</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CommonUI\AboutBox.resx">
@@ -161,6 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
+      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
+      <Name>CommonUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
