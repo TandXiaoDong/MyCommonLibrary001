@@ -62,7 +62,6 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Code
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\Newtonsoft.Json.xml
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\FigKey.Util.Extension.pdb
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csprojAssemblyReference.cache
-F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csproj.CoreCompileInputs.cache
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.pdb

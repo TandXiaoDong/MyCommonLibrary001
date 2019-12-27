@@ -26,7 +26,6 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util\bin\Debug\FigKey.Util.Extension.pdb
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util\bin\Debug\Newtonsoft.Json.xml
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.csprojAssemblyReference.cache
-F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.csproj.CoreCompileInputs.cache
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util\obj\Debug\FigKey.Util.pdb
