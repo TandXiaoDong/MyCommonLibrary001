@@ -321,6 +321,7 @@ D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\Com
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\System.Xml.XmlSerializer.dll
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\System.Xml.XPath.dll
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\System.Xml.XPath.XDocument.dll
+<<<<<<< HEAD
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.pdb
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\CommonUtils.dll
@@ -482,3 +483,6 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.AssemblyInfo.cs
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\log4net.dll
+=======
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.csproj.CoreCompileInputs.cache
+>>>>>>> f804d655e75f3c97639b2c9358b157a49724c599

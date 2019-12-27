@@ -1782,8 +1782,12 @@
             "target": "Package",
             "version": "[2.0.8, )"
           }
+<<<<<<< HEAD
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+=======
+        }
+>>>>>>> f804d655e75f3c97639b2c9358b157a49724c599
       },
       "net472": {
         "dependencies": {
@@ -1819,8 +1823,12 @@
             "target": "Package",
             "version": "[2.0.8, )"
           }
+<<<<<<< HEAD
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+=======
+        }
+>>>>>>> f804d655e75f3c97639b2c9358b157a49724c599
       }
     }
   }
