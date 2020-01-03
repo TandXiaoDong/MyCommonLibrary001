@@ -14,10 +14,10 @@ namespace CodeGeneratorTest
         static void Main(string[] args)
         {
             BaseConfigModel baseConfigModel = new BaseConfigModel();
-            baseConfigModel.OutputEntity = "E:\\";
-            //CreateCodeFile.CreateExecution(baseConfigModel, "entityCode");
+            baseConfigModel.OutputEntity = @"F:\files\CodeGeneratorTest";
+            CreateCodeFile.CreateExecution(baseConfigModel, "entityCode");
             SingleTable singleTable = new SingleTable();
-            var modelString = singleTable.EntityBuilder(baseConfigModel,new System.Data.DataTable());
+            //var modelString = singleTable.EntityBuilder(baseConfigModel,new System.Data.DataTable());
         }
     }
 }

@@ -11,9 +11,9 @@ namespace LeaRun.CodeGenerator.Template
 {
     /// <summary>
     /// 版 本 1.0
-    /// Copyright (c) 2013-2019 丰柯电子科技（上海）有限公司重庆分公司
+    /// Copyright (c) 2019 丰柯电子科技（重庆）有限公司
     /// 创建人：唐小东
-    /// 日 期：2019.09.24 9:54
+    /// 日 期：2020.01.03 14:54
     /// 描 述：代码生成模板（单表）
     /// </summary>
     public class ServiceClass
@@ -36,7 +36,7 @@ namespace LeaRun.CodeGenerator.Template
             sb.Append("{\r\n");
             sb.Append("    /// <summary>\r\n");
             sb.Append("    /// 版 本\r\n");
-            sb.Append("    /// Copyright (c) 2013-2016 上海力软信息技术有限公司\r\n");
+            sb.Append("    /// Copyright (c) 2019 丰柯电子科技（重庆）有限公司\r\n");
             sb.Append("    /// 创 建：" + baseConfigModel.CreateUser + "\r\n");
             sb.Append("    /// 日 期：" + baseConfigModel.CreateDate + "\r\n");
             sb.Append("    /// 描 述：" + baseConfigModel.Description + "\r\n");
@@ -160,7 +160,7 @@ namespace LeaRun.CodeGenerator.Template
             sb.Append("{\r\n");
             sb.Append("    /// <summary>\r\n");
             sb.Append("    /// 版 本\r\n");
-            sb.Append("    /// Copyright (c) 2013-2016 上海力软信息技术有限公司\r\n");
+            sb.Append("    /// Copyright (c) 2019 丰柯电子科技（重庆）有限公司\r\n");
             sb.Append("    /// 创 建：" + baseConfigModel.CreateUser + "\r\n");
             sb.Append("    /// 日 期：" + baseConfigModel.CreateDate + "\r\n");
             sb.Append("    /// 描 述：" + baseConfigModel.Description + "\r\n");
@@ -206,8 +206,8 @@ namespace LeaRun.CodeGenerator.Template
             sb.Append("namespace LeaRun.Application.Service." + baseConfigModel.OutputAreas + "\r\n");
             sb.Append("{\r\n");
             sb.Append("    /// <summary>\r\n");
-            sb.Append("    /// 版 本 6.1\r\n");
-            sb.Append("    /// Copyright (c) 2013-2016 上海力软信息技术有限公司\r\n");
+            sb.Append("    /// 版 本 1.0\r\n");
+            sb.Append("    /// Copyright (c) 2019 丰柯电子科技（重庆）有限公司\r\n");
             sb.Append("    /// 创 建：" + baseConfigModel.CreateUser + "\r\n");
             sb.Append("    /// 日 期：" + baseConfigModel.CreateDate + "\r\n");
             sb.Append("    /// 描 述：" + baseConfigModel.Description + "\r\n");
@@ -326,8 +326,8 @@ namespace LeaRun.CodeGenerator.Template
             sb.Append("namespace LeaRun.Application.IService." + baseConfigModel.OutputAreas + "\r\n");
             sb.Append("{\r\n");
             sb.Append("    /// <summary>\r\n");
-            sb.Append("    /// 版 本 6.1\r\n");
-            sb.Append("    /// Copyright (c) 2013-2016 上海力软信息技术有限公司\r\n");
+            sb.Append("    /// 版 本 1.0\r\n");
+            sb.Append("    /// Copyright (c) 2019 丰柯电子科技（重庆）有限公司\r\n");
             sb.Append("    /// 创 建：" + baseConfigModel.CreateUser + "\r\n");
             sb.Append("    /// 日 期：" + baseConfigModel.CreateDate + "\r\n");
             sb.Append("    /// 描 述：" + baseConfigModel.Description + "\r\n");
@@ -397,8 +397,8 @@ namespace LeaRun.CodeGenerator.Template
             sb.Append("namespace LeaRun.Application.Busines." + baseConfigModel.OutputAreas + "\r\n");
             sb.Append("{\r\n");
             sb.Append("    /// <summary>\r\n");
-            sb.Append("    /// 版 本 6.1\r\n");
-            sb.Append("    /// Copyright (c) 2013-2016 上海力软信息技术有限公司\r\n");
+            sb.Append("    /// 版 本 1.0\r\n");
+            sb.Append("    /// Copyright (c) 2019 丰柯电子科技（重庆）有限公司\r\n");
             sb.Append("    /// 创 建：" + baseConfigModel.CreateUser + "\r\n");
             sb.Append("    /// 日 期：" + baseConfigModel.CreateDate + "\r\n");
             sb.Append("    /// 描 述：" + baseConfigModel.Description + "\r\n");

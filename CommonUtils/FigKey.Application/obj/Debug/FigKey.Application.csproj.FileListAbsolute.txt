@@ -72,4 +72,4 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Appl
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Application\obj\Debug\FigKey.Application.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Application\obj\Debug\FigKey.Application.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Application\obj\Debug\FigKey.Application.pdb
-F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Application\obj\Debug\FigKey.Application.csproj.CoreCompileInputs.cache
+F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Application\bin\Debug\Oracle.DataAccess.dll

@@ -11,6 +11,5 @@ D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\Fig
 D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.pdb
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\bin\Debug\FigKey.Util.Extension.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\bin\Debug\FigKey.Util.Extension.pdb
-F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.csprojAssemblyReference.cache
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Util.Extension\obj\Debug\FigKey.Util.Extension.pdb

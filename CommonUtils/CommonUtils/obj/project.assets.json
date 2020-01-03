@@ -924,6 +924,7 @@
       "path": "google.protobuf/3.5.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "google.protobuf.3.5.1.nupkg.sha512",
         "google.protobuf.nuspec",
         "lib/net45/Google.Protobuf.dll",
@@ -1159,6 +1160,7 @@
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1345,6 +1347,7 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1661,6 +1664,7 @@
       "path": "zedgraph/5.1.7",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "content/License-LGPL.txt",
         "lib/net35-Client/ZedGraph.XML",
         "lib/net35-Client/ZedGraph.dll",
@@ -1782,12 +1786,8 @@
             "target": "Package",
             "version": "[2.0.8, )"
           }
-<<<<<<< HEAD
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
-=======
-        }
->>>>>>> f804d655e75f3c97639b2c9358b157a49724c599
       },
       "net472": {
         "dependencies": {
@@ -1823,12 +1823,8 @@
             "target": "Package",
             "version": "[2.0.8, )"
           }
-<<<<<<< HEAD
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
-=======
-        }
->>>>>>> f804d655e75f3c97639b2c9358b157a49724c599
       }
     }
   }

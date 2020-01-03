@@ -180,14 +180,13 @@
     <None Include="Resources\fg.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+    <Content Include="RegisterBind\说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
-      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
+      <Project>{71fb8504-3725-4f87-9224-021ddf4f2dda}</Project>
       <Name>CommonUtils</Name>
     </ProjectReference>
-=======
-    <Content Include="RegisterBind\说明.txt" />
->>>>>>> f804d655e75f3c97639b2c9358b157a49724c599
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

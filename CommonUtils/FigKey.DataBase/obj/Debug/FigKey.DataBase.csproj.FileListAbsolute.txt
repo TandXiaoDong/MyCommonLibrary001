@@ -12,6 +12,5 @@ D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\Fig
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.DataBase\bin\Debug\FigKey.DataBase.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.DataBase\bin\Debug\FigKey.DataBase.pdb
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.csprojAssemblyReference.cache
-F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.csproj.CoreCompileInputs.cache
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.DataBase\obj\Debug\FigKey.DataBase.pdb
