@@ -112,6 +112,12 @@
     <Compile Include="CommonUI\RadFormMenu.Designer.cs">
       <DependentUpon>RadFormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonUI\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonUI\WelcomeForm.designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlCommon\FontRool.cs" />
     <Compile Include="ControlCommon\RadGridViewProperties.cs" />
     <Compile Include="GridViewExportData\GridViewExport.cs" />
@@ -162,6 +168,12 @@
     <EmbeddedResource Include="CommonUI\RadFormMenu.resx">
       <DependentUpon>RadFormMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonUI\WelcomeForm.cs.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonUI\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RegisterBind\说明.txt" />
+    <None Include="Resources\movieLab-bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

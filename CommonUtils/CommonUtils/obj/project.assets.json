@@ -1781,7 +1781,8 @@
             "target": "Package",
             "version": "[2.0.8, )"
           }
-        }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       },
       "net472": {
         "dependencies": {
@@ -1817,7 +1818,8 @@
             "target": "Package",
             "version": "[2.0.8, )"
           }
-        }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
