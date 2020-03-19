@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DotNet.Utilities
+namespace CommonUtils.Excel
 {
     /// <summary>
     /// Excel操作类

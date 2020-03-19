@@ -250,6 +250,11 @@ namespace WindowsFormTelerik.GridViewExportData
         /// <param name="radGridView"></param>
         public static void ExportGridViewData(ExportFormat exportFormat, RadGridView radGridView)
         {
+            if (radGridView.RowCount < 1)
+            {
+                MessageBox.Show("没有可以导出的数据！","提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
             var filter = "Excel (*.xls)|*.xls";
             if (exportFormat == ExportFormat.EXCEL)
             {

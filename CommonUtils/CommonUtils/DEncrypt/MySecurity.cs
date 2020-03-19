@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using CommonUtils;
 
-namespace DotNet.Utilities
+namespace CommonUtils.DEncrypt
 {
     /// <summary>
     /// MySecurity(安全类) 的摘要说明。

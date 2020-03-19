@@ -7,9 +7,9 @@ namespace FigKey.CodeGenerator.Model
 {
     /// <summary>
     /// 版 本 1.0
-    /// Copyright (c) 2013-2019 丰柯电子科技（上海）有限公司重庆分公司
+    /// Copyright (c) 2019 丰柯电子科技（重庆）有限公司
     /// 创建人：唐小东
-    /// 日 期：2019.09.24 9:54
+    /// 日 期：2020.01.03 14:54
     /// 描 述：表格信息
     /// </summary>
     public class GridModel

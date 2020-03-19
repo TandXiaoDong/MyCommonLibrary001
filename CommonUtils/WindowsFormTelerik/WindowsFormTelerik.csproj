@@ -144,12 +144,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
-      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
-      <Name>CommonUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="CommonUI\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +193,12 @@
   <ItemGroup>
     <Content Include="RegisterBind\说明.txt" />
     <None Include="Resources\movieLab-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
+      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
+      <Name>CommonUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

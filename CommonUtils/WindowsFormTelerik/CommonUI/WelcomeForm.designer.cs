@@ -52,6 +52,7 @@
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.Size = new System.Drawing.Size(492, 324);
             this.radPanorama1.TabIndex = 0;
+            this.radPanorama1.ThemeName = "MaterialBlueGrey";
             // 
             // lable_companyCopyRight
             // 
@@ -59,7 +60,7 @@
             this.lable_companyCopyRight.BackColor = System.Drawing.Color.Transparent;
             this.lable_companyCopyRight.Location = new System.Drawing.Point(28, 302);
             this.lable_companyCopyRight.Name = "lable_companyCopyRight";
-            this.lable_companyCopyRight.Size = new System.Drawing.Size(290, 13);
+            this.lable_companyCopyRight.Size = new System.Drawing.Size(330, 17);
             this.lable_companyCopyRight.TabIndex = 3;
             this.lable_companyCopyRight.Text = "Copyright (c)  2019  丰柯电子科技（上海）有限公司";
             // 
@@ -69,7 +70,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(3, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 2;
             // 
             // lable_version
@@ -78,7 +79,7 @@
             this.lable_version.BackColor = System.Drawing.Color.Transparent;
             this.lable_version.Location = new System.Drawing.Point(340, 98);
             this.lable_version.Name = "lable_version";
-            this.lable_version.Size = new System.Drawing.Size(54, 13);
+            this.lable_version.Size = new System.Drawing.Size(70, 17);
             this.lable_version.TabIndex = 1;
             this.lable_version.Text = "v 1.0.2.20";
             // 

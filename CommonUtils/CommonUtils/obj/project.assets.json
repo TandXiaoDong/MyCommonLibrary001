@@ -924,6 +924,7 @@
       "path": "google.protobuf/3.5.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "google.protobuf.3.5.1.nupkg.sha512",
         "google.protobuf.nuspec",
         "lib/net45/Google.Protobuf.dll",
@@ -968,6 +969,7 @@
       "path": "log4net/2.0.8",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net20-full/log4net.dll",
         "lib/net20-full/log4net.xml",
         "lib/net35-client/log4net.dll",
@@ -1158,6 +1160,7 @@
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1344,6 +1347,7 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1660,6 +1664,7 @@
       "path": "zedgraph/5.1.7",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "content/License-LGPL.txt",
         "lib/net35-Client/ZedGraph.XML",
         "lib/net35-Client/ZedGraph.dll",
