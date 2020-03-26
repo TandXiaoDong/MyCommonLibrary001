@@ -27,7 +27,6 @@ namespace WindowsFormTelerik.ControlCommon
             gridView.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
             //radGridView.AutoSizeRows = true;
             //gridView.MasterTemplate.BestFitColumns();
-            gridView.ReadOnly = IsReadOnly;
             //gridView.ColumnChooserSortOrder = RadSortOrder.Ascending;
             //dgv.AllowRowHeaderContextMenu = false;
             gridView.ShowGroupPanel = false;
@@ -35,6 +34,7 @@ namespace WindowsFormTelerik.ControlCommon
             gridView.MasterTemplate.AllowAddNewRow = allowAddNewRow;
             gridView.EnableHotTracking = true;
             gridView.MasterTemplate.SelectLastAddedRow = false;
+            gridView.ReadOnly = IsReadOnly;
             //radRadioDataReader.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             //this.radGridView1.CurrentRow = this.radGridView1.Rows[0];//设置某行为当前行
             //radGridView.Rows[0].Cells[0].Style.ForeColor;
