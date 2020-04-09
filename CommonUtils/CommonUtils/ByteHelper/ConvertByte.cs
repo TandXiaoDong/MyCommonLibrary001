@@ -22,9 +22,9 @@ namespace CommonUtils.ByteHelper
                 {
                     buffer[startIndex + i] = Convert.ToByte(hexString[i], 16);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    LogHelper.Log.Info("Hexstringtobyte error! "+hexString[i]);
+                    LogHelper.Log.Error(ex.StackTrace + "\r\n"+hexString[i]);
                 }
             }
             return buffer;

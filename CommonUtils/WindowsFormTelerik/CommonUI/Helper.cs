@@ -14,9 +14,6 @@ namespace WindowsFormTelerik.CommonUI
         public Helper()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
         }
 
         private void Helper_Load(object sender, EventArgs e)

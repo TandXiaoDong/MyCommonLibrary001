@@ -41,6 +41,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.materialBlueGreyTheme1 = new Telerik.WinControls.Themes.MaterialBlueGreyTheme();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -58,7 +61,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(119, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 17);
+            this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "021-58921883";
             // 
@@ -67,19 +70,20 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(119, 70);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(111, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(96, 15);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "www.figkey.com";
             // 
             // radButton1
             // 
-            this.radButton1.Location = new System.Drawing.Point(122, 157);
+            this.radButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.radButton1.Location = new System.Drawing.Point(122, 155);
             this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(66, 24);
+            this.radButton1.Size = new System.Drawing.Size(85, 28);
             this.radButton1.TabIndex = 11;
-            this.radButton1.Text = "确定(O)";
-            this.radButton1.ThemeName = "Breeze";
+            this.radButton1.Text = "确定";
+            this.radButton1.ThemeName = "MaterialBlueGrey";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // radLabel2
@@ -102,11 +106,11 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(12, 198);
+            this.radLabel4.Location = new System.Drawing.Point(12, 205);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(290, 18);
             this.radLabel4.TabIndex = 15;
-            this.radLabel4.Text = "版权所有 （C）2019，丰柯电子科技（上海）有限公司";
+            this.radLabel4.Text = "版权所有 （C）2020，丰柯电子科技（上海）有限公司";
             // 
             // radLabel1
             // 
@@ -158,16 +162,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(119, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.Size = new System.Drawing.Size(102, 15);
             this.label1.TabIndex = 19;
             this.label1.Text = "sales@figkey.com";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(-26, 189);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(394, 10);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "---------------------------------------------------------------------------------" +
+    "-----------------------------------------------";
             // 
             // Helper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(350, 223);
+            this.ClientSize = new System.Drawing.Size(350, 234);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.radLabel6);
@@ -180,13 +195,16 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Helper";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "帮助";
-            this.ThemeName = "Material";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "关于";
+            this.ThemeName = "Office2013Light";
             this.Load += new System.EventHandler(this.Helper_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
@@ -217,5 +235,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private System.Windows.Forms.Label label1;
+        private Telerik.WinControls.Themes.MaterialBlueGreyTheme materialBlueGreyTheme1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
     }
 }

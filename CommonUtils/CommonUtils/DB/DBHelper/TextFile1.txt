@@ -1,0 +1,1 @@
+﻿alter table TUser add ID int identity(1,1)

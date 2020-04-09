@@ -55,6 +55,7 @@
     <Reference Include="Telerik.WinControls.Themes.Material, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.MaterialBlueGrey, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CommonUtils\Lib\telerik\Telerik.WinControls.UI.dll</HintPath>
@@ -112,7 +113,12 @@
     <Compile Include="CommonUI\RadFormMenu.Designer.cs">
       <DependentUpon>RadFormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlCommon\GridDoubleBuffer.cs" />
+    <Compile Include="CommonUI\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonUI\WelcomeForm.designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlCommon\FontRool.cs" />
     <Compile Include="ControlCommon\RadGridViewProperties.cs" />
     <Compile Include="GridViewExportData\GridViewExport.cs" />
@@ -157,6 +163,12 @@
     <EmbeddedResource Include="CommonUI\RadFormMenu.resx">
       <DependentUpon>RadFormMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonUI\WelcomeForm.cs.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonUI\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -181,10 +193,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RegisterBind\说明.txt" />
+    <None Include="Resources\movieLab-bg.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
-      <Project>{71fb8504-3725-4f87-9224-021ddf4f2dda}</Project>
+      <Project>{ebfca1b5-23f1-4f94-928a-db1a7b98eed6}</Project>
       <Name>CommonUtils</Name>
     </ProjectReference>
   </ItemGroup>
