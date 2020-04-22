@@ -103,10 +103,10 @@ namespace CommonUtils.DBHelper
         {
             this.TimeOut = 100;
             string path = AppDomain.CurrentDomain.BaseDirectory + "Config" + "\\" + "sqlcon.ini";
-            string server = INIFile.GetValue("MySqlCon", "server", path);
-            string database = INIFile.GetValue("MySqlCon", "database", path);
-            string password = INIFile.GetValue("MySqlCon", "password", path);
-            string userid = INIFile.GetValue("MySqlCon", "user id", path);
+            string server = INIFile.GetValue("MySqlCon", "server", path).ToString();
+            string database = INIFile.GetValue("MySqlCon", "database", path).ToString();
+            string password = INIFile.GetValue("MySqlCon", "password", path).ToString();
+            string userid = INIFile.GetValue("MySqlCon", "user id", path).ToString();
             ConnString = "server=" + server + ";" + "database=" + database + ";" + "password=" + password + ";" + "user id=" + userid + ";" + "charset = utf8";
             ConnTo();
         }

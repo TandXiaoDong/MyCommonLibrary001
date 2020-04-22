@@ -59,7 +59,7 @@ namespace CommonUtils.FileHelper
 
 		}
 
-        public static string GetValue(string section, string key, string path)
+        public static object GetValue(string section, string key, string path)
         {
             StringBuilder s = new StringBuilder(1024);
             GetPrivateProfileString(section, key, "", s, 1024, path);

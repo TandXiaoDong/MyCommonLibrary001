@@ -16,6 +16,7 @@ namespace WindowsFormTelerik.GridViewExportData
 {
     public class GridViewExport
     {
+        private static bool IsSavedColumns;
         public enum ExportFormat
         {
             EXCEL,
@@ -335,6 +336,71 @@ namespace WindowsFormTelerik.GridViewExportData
             catch (Exception ex)
             {
                 //logger.Error("导出csv失败！" + ex.Message);
+                return;
+            }
+            finally
+            {
+                if (sw != null)
+                {
+                    sw.Close();
+                }
+                if (fs != null)
+                {
+                    fs.Close();
+                }
+                sw = null;
+                fs = null;
+            }
+        }
+
+        public static void ImportToCSV(List<int> channelData, string path)
+        {
+            if (channelData.Count == 0)
+                return;
+            FileStream fs = null;
+            StreamWriter sw = null;
+            try
+            {
+                if (!File.Exists(path))
+                    IsSavedColumns = false;
+                fs = new FileStream(path, FileMode.Append, FileAccess.Write);
+                sw = new StreamWriter(fs, Encoding.Default);
+                //写入列头
+                if (!IsSavedColumns)
+                {
+                    var columns = "setVal,";
+                    for (int i = 1; i <= 8; i++)
+                    {
+                        if (i < 8)
+                        {
+                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current,ch{i}_voltage,";
+                        }
+                        else
+                        {
+                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current,ch{i}_voltage";
+                        }
+                    }
+                    sw.WriteLine(columns);
+                    IsSavedColumns = true;
+                }
+                //csv写入数据
+                StringBuilder sb = new StringBuilder();
+                for (int j = 0; j < channelData.Count; j++)
+                {
+                    if (j < channelData.Count - 1)
+                    {
+                        sb.Append(channelData[j] + ",");
+                    }
+                    else
+                    {
+                        sb.Append(channelData[j]);
+                    }
+                }
+                sw.WriteLine(sb);
+            }
+            catch (Exception ex)
+            {
+                //Logh("导出csv失败！" + ex.Message);
                 return;
             }
             finally
