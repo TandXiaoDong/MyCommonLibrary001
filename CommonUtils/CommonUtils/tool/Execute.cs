@@ -24,6 +24,9 @@ namespace CommonUtils.tool
                 //process.StartInfo.RedirectStandardOutput = false;//是否重定向错误 
                 process.StartInfo.RedirectStandardError = false;//执行时是不是显示窗口 
                 process.StartInfo.CreateNoWindow = true;//启动 
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;//这里设置DOS窗口不显示，经实践可行
+
                 bool b = process.Start();
                 process.WaitForExit();
                 process.Close();
