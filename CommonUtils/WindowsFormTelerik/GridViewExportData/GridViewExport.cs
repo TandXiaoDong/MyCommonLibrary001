@@ -361,6 +361,11 @@ namespace WindowsFormTelerik.GridViewExportData
             StreamWriter sw = null;
             try
             {
+                FileInfo fileInfo = new FileInfo(path);
+                if (!Directory.Exists(fileInfo.Directory.FullName))
+                {
+                    Directory.CreateDirectory(fileInfo.Directory.FullName);
+                }
                 if (!File.Exists(path))
                     IsSavedColumns = false;
                 fs = new FileStream(path, FileMode.Append, FileAccess.Write);
