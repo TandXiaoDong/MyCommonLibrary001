@@ -16,6 +16,7 @@ namespace WindowsFormTelerik.GridViewExportData
 {
     public class GridViewExport
     {
+        private static bool IsSavedColumns;
         public enum ExportFormat
         {
             EXCEL,
@@ -352,20 +353,54 @@ namespace WindowsFormTelerik.GridViewExportData
             }
         }
 
-        public static void ImportToCSV(string hexString, string path)
+        public static void ImportToCSV(List<int> channelData, string path)
         {
+            if (channelData.Count == 0)
+                return;
             FileStream fs = null;
             StreamWriter sw = null;
             try
             {
+                if (!File.Exists(path))
+                    IsSavedColumns = false;
                 fs = new FileStream(path, FileMode.Append, FileAccess.Write);
                 sw = new StreamWriter(fs, Encoding.Default);
+                //写入列头
+                if (!IsSavedColumns)
+                {
+                    var columns = "setVal,";
+                    for (int i = 1; i <= 8; i++)
+                    {
+                        if (i < 8)
+                        {
+                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current,ch{i}_voltage,";
+                        }
+                        else
+                        {
+                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current,ch{i}_voltage";
+                        }
+                    }
+                    sw.WriteLine(columns);
+                    IsSavedColumns = true;
+                }
                 //csv写入数据
-                sw.WriteLine(hexString);
+                StringBuilder sb = new StringBuilder();
+                for (int j = 0; j < channelData.Count; j++)
+                {
+                    if (j < channelData.Count - 1)
+                    {
+                        sb.Append(channelData[j] + ",");
+                    }
+                    else
+                    {
+                        sb.Append(channelData[j]);
+                    }
+                }
+                sw.WriteLine(sb);
             }
             catch (Exception ex)
             {
-                //logger.Error("导出csv失败！" + ex.Message);
+                //Logh("导出csv失败！" + ex.Message);
                 return;
             }
             finally
