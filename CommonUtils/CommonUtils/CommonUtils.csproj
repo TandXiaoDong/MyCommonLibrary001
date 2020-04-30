@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFrameworks>net4.6.1;net4.7.2</TargetFrameworks>
+	<TargetFrameworks>net4.6.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,43 +28,43 @@
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="Telerik.Documents.SpreadsheetStreaming">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
     <Reference Include="TelerikCommon">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
     </Reference>
     <Reference Include="TelerikData">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
     </Reference>
     <Reference Include="TelerikExport">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTMonitor\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
     </Reference>
   </ItemGroup>
 

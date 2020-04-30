@@ -293,12 +293,12 @@ namespace WindowsFormTelerik.GridViewExportData
             }
         }
 
-        public static void ImportToCSV(DataTable dt, string path)
+        public static bool ImportToCSV(DataTable dt, string path)
         {
             if (dt.Rows.Count < 1)
             {
                 MessageBox.Show("没有可以导出的数据！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return  false;
             }
 
             FileStream fs = null;
@@ -331,12 +331,13 @@ namespace WindowsFormTelerik.GridViewExportData
                         sw.WriteLine(data2);
                     }
                     data = data2;
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 //logger.Error("导出csv失败！" + ex.Message);
-                return;
+                return false;
             }
             finally
             {
@@ -351,6 +352,7 @@ namespace WindowsFormTelerik.GridViewExportData
                 sw = null;
                 fs = null;
             }
+            return true;
         }
 
         public static void ImportToCSV(List<int> channelData, string path)

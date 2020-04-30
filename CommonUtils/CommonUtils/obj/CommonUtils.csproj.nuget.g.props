@@ -15,7 +15,4 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net4.6.1' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\Administrator\.nuget\packages\newtonsoft.json\10.0.3</PkgNewtonsoft_Json>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net4.7.2' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\Administrator\.nuget\packages\newtonsoft.json\10.0.3</PkgNewtonsoft_Json>
-  </PropertyGroup>
 </Project>
