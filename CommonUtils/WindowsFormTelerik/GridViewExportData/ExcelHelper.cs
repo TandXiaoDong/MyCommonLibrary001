@@ -12,19 +12,19 @@ using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 using System.IO;
 using System.Data.OleDb;
-using Microsoft.Office.Interop.Excel;
 using CommonUtils.FileHelper;
+using CommonUtils.Logger;
 using Telerik.WinControls.UI;
 using Telerik.WinControls;
 
 namespace WindowsFormTelerik.GridViewExportData
 {
-    public class ExcelHelper:IDisposable
+    public class ExcelHelper
     {
         //private static string fileName = null; //文件名
         private static IWorkbook workbook = null;
         private static FileStream fs = null;
-        private bool disposed;
+
         public enum ExcelTypeEnum
         {
             excelXls,
@@ -151,6 +151,8 @@ namespace WindowsFormTelerik.GridViewExportData
                         RadMessageBox.Show(message, "Open File", MessageBoxButtons.OK, RadMessageIcon.Error);
                     }
                 }
+                if (fs != null)
+                    fs.Close();
                 return count;
             }
             catch (Exception ex)
@@ -234,153 +236,16 @@ namespace WindowsFormTelerik.GridViewExportData
                         data.Rows.Add(dataRow);
                     }
                 }
-
+                if (fs != null)
+                    fs.Close();
                 return data;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: " + ex.Message);
+                LogHelper.Log.Error("Exception: " + ex.Message);
                 return null;
             }
         }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    if (fs != null)
-                        fs.Close();
-                }
-
-                fs = null;
-                disposed = true;
-            }
-        }
-
-        public static void ExportExcel1(System.Data.DataTable dt)
-        {
-            if (null == dt || dt.Rows.Count <= 0)
-                return;
-            var desPath = FileSelect.SaveAs("*.*|*.xls", "C:\\");
-            if (desPath == "")
-                return;
-            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
-            app.Visible = false;
-            app.UserControl = true;
-
-            Microsoft.Office.Interop.Excel.Workbook workbook = app.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
-            Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];
-            //worksheet.Name = "sheet1"; // 修改sheet名称
-            //Microsoft.Office.Interop.Excel.Range range;
-            //long totalCount = dt.Rows.Count;
-            //long rowRead = 0;
-            //float percent = 0; // 导出进度
-
-            // 保存列名，Excel的索引从1开始
-            for (int i = 0; i < dt.Columns.Count; i++)
-            {
-                worksheet.Cells[1, i + 1] = dt.Columns[i].ColumnName;
-                // 标题设置
-                //range = (Microsoft.Office.Interop.Excel.Range)worksheet.Cells[1, i + 1];
-                //range.Interior.ColorIndex = 15; // 背景色
-                //range.Font.Bold = true; // 粗体
-            }
-            // 保存数据
-            for (int r = 0; r < dt.Rows.Count; r++)
-            {
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    worksheet.Cells[r + 2, i + 1] = dt.Rows[r][i].ToString();
-                }
-                //rowRead++;
-                //percent = ((float)(100 * rowRead)) / totalCount; // 当前进度
-            }
-
-            // 合计：
-            //worksheet.Cells[DT.Rows.Count + 2, 1] = "合计";
-            //worksheet.Cells[DT.Rows.Count + 2, 4] = DT.Compute("sum(Quantity)", ""); // DataTable筛选条件
-            //worksheet.Cells[DT.Rows.Count + 2, 6] = DT.Compute("sum(TotalAmt)", "");
-
-            //调整Excel的样式。
-            //Microsoft.Office.Interop.Excel.Range rg = worksheet.Cells.get_Range("A3", worksheet.Cells[rowCount + 2, 32]);
-            //rg.Borders.LineStyle = 1; //单元格加边框
-            //worksheet.Columns.AutoFit(); //自动调整列宽
-
-            //隐藏某一行
-            //选中部分单元格，把选中的单元格所在的行的Hidden属性设为true
-            //worksheet.get_Range(app.Cells[2, 1], app.Cells[2, 32]).EntireRow.Hidden = true;
-
-            //删除某一行
-            // worksheet.get_Range(app.Cells[2, 1], app.Cells[2, 32]).EntireRow.Delete(Microsoft.Office.Interop.Excel.XlDirection.xlUp);
-
-            workbook.SaveAs(desPath);
-
-            // 释放资源
-            workbook.Close();
-            workbook = null;
-            app.Quit();
-            app = null;
-        }
-
-        private void CreateStringWriter(System.Data.DataTable dt, ref StringWriter sw)
-        {
-            string sheetName = "sheetName";
-
-            sw.WriteLine("<html xmlns:x=\"urn:schemas-microsoft-com:office:excel\">");
-            sw.WriteLine("<head>");
-            sw.WriteLine("<!--[if gte mso 9]>");
-            sw.WriteLine("<xml>");
-            sw.WriteLine(" <x:ExcelWorkbook>");
-            sw.WriteLine(" <x:ExcelWorksheets>");
-            sw.WriteLine(" <x:ExcelWorksheet>");
-            sw.WriteLine(" <x:Name>" + sheetName + "</x:Name>");
-            sw.WriteLine(" <x:WorksheetOptions>");
-            sw.WriteLine(" <x:Print>");
-            sw.WriteLine(" <x:ValidPrinterInfo />");
-            sw.WriteLine(" </x:Print>");
-            sw.WriteLine(" </x:WorksheetOptions>");
-            sw.WriteLine(" </x:ExcelWorksheet>");
-            sw.WriteLine(" </x:ExcelWorksheets>");
-            sw.WriteLine("</x:ExcelWorkbook>");
-            sw.WriteLine("</xml>");
-            sw.WriteLine("<![endif]-->");
-            sw.WriteLine("</head>");
-            sw.WriteLine("<body>");
-            sw.WriteLine("<table>");
-            sw.WriteLine(" <tr>");
-            string[] columnArr = new string[dt.Columns.Count];
-            int i = 0;
-            foreach (DataColumn columns in dt.Columns)
-            {
-
-                sw.WriteLine(" <td>" + columns.ColumnName + "</td>");
-                columnArr[i] = columns.ColumnName;
-                i++;
-            }
-            sw.WriteLine(" </tr>");
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                sw.WriteLine(" <tr>");
-                foreach (string columnName in columnArr)
-                {
-                    sw.WriteLine(" <td style='vnd.ms-excel.numberformat:@'>" + dr[columnName] + "</td>");
-                }
-                sw.WriteLine(" </tr>");
-            }
-            sw.WriteLine("</table>");
-            sw.WriteLine("</body>");
-            sw.WriteLine("</html>");
-        }
-
 
         public static DataSet ExcelToDS(string filePath, ExcelTypeEnum excelType)
         {

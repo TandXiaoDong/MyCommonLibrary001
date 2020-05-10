@@ -30,7 +30,6 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
@@ -42,9 +41,9 @@
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.materialBlueGreyTheme1 = new Telerik.WinControls.Themes.MaterialBlueGreyTheme();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_ok = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
@@ -74,17 +73,6 @@
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "www.figkey.com";
-            // 
-            // radButton1
-            // 
-            this.radButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.radButton1.Location = new System.Drawing.Point(122, 155);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(85, 28);
-            this.radButton1.TabIndex = 11;
-            this.radButton1.Text = "确定";
-            this.radButton1.ThemeName = "MaterialBlueGrey";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // radLabel2
             // 
@@ -168,20 +156,30 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(-26, 189);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(2, 189);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(394, 10);
+            this.groupBox1.Size = new System.Drawing.Size(356, 10);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "---------------------------------------------------------------------------------" +
-    "-----------------------------------------------";
+            // 
+            // btn_ok
+            // 
+            this.btn_ok.Location = new System.Drawing.Point(122, 160);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(75, 23);
+            this.btn_ok.TabIndex = 22;
+            this.btn_ok.Text = "确定";
+            this.btn_ok.UseVisualStyleBackColor = true;
             // 
             // Helper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(350, 234);
+            this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.label1);
@@ -191,7 +189,6 @@
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel2);
-            this.Controls.Add(this.radButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
@@ -206,7 +203,6 @@
             this.Text = "关于";
             this.ThemeName = "Office2013Light";
             this.Load += new System.EventHandler(this.Helper_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
@@ -224,7 +220,6 @@
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel3;
@@ -236,7 +231,8 @@
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.Themes.MaterialBlueGreyTheme materialBlueGreyTheme1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_ok;
     }
 }

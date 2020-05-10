@@ -21,16 +21,17 @@ namespace WindowsFormTelerik.CommonUI
             linkLabel1.Text = "www.figkey.com";
             linkLabel1.LinkVisited = true;
             linkLabel1.LinkClicked += LinkLabel1_LinkClicked;
+            this.btn_ok.Click += Btn_ok_Click;
+        }
+
+        private void Btn_ok_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("iexplore.exe", linkLabel1.Text);
-        }
-
-        private void radButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
