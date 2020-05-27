@@ -81,13 +81,18 @@ namespace WindowsFormTelerik.ControlCommon
             }
         }
 
-        public static void ClearGridView(RadGridView radGridView)
+        public static void ClearGridView(RadGridView radGridView, System.Data.DataTable data)
         {
             if (radGridView.RowCount < 1)
                 return;
             for (int i = radGridView.RowCount - 1; i >= 0; i--)
             {
                 radGridView.Rows[i].Delete();
+            }
+            if (data != null)
+            {
+                data.Rows.Clear();
+                radGridView.DataSource = data;
             }
         }
     }
