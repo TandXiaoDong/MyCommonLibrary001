@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Data;
 
 namespace CommonUtils.PDF
 {
@@ -16,6 +17,16 @@ namespace CommonUtils.PDF
     //-------------------------------------------------------------------------------------
     public class PDFOperation
     {
+        #region 私有字段
+        private Font font;
+        private Rectangle rect;   //文档大小
+        private Document document;//文档对象
+        private BaseFont basefont;//字体
+        private PdfWriter pdfWriter;
+        private PdfContentByte contentByte;
+
+        #endregion
+
         #region 构造函数
         /// <summary>
         /// 构造函数
@@ -49,13 +60,6 @@ namespace CommonUtils.PDF
             SetPageSize(type);
             document = new Document(rect, marginLeft, marginRight, marginTop, marginBottom);
         }
-        #endregion
-
-        #region 私有字段
-        private Font font;
-        private Rectangle rect;   //文档大小
-        private Document document;//文档对象
-        private BaseFont basefont;//字体
         #endregion
 
         #region 设置字体
@@ -103,7 +107,7 @@ namespace CommonUtils.PDF
         /// <param name="os">文档相关信息（如路径，打开方式等）</param>
         public void GetInstance(Stream os)
         {
-            PdfWriter.GetInstance(document, os);
+            this.pdfWriter = PdfWriter.GetInstance(document, os);
         }
         #endregion
 
@@ -116,6 +120,7 @@ namespace CommonUtils.PDF
         {
             GetInstance(os);
             document.Open();
+            this.contentByte = pdfWriter.DirectContent;
         }
         #endregion
 
@@ -140,6 +145,43 @@ namespace CommonUtils.PDF
             SetFont(fontsize);
             Paragraph pra = new Paragraph(content, font);
             document.Add(pra);
+        }
+
+        public void AddLine(int sizeHight)
+        {
+            //this.contentByte.SetFontAndSize(this.basefont, fontsize);
+            this.contentByte.SaveState();
+            this.contentByte.SetLineWidth(1.0f);   // Make a bit thicker than 1.0 default
+            this.contentByte.MoveTo(35, this.rect.Height - sizeHight);
+            this.contentByte.LineTo(this.rect.Width - 35, this.rect.Height - sizeHight);
+            this.contentByte.Stroke();
+            this.contentByte.RestoreState();
+        }
+
+        public void AddParagraph(string title, System.Data.DataTable dt,float fontsize)
+        {
+            SetFont(fontsize);
+            Font f = new Font(basefont);
+
+            PdfPTable table = new PdfPTable(dt.Columns.Count);
+            PdfPCell cell = new PdfPCell(new Phrase(title, f));
+            cell.Colspan = dt.Columns.Count;
+            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right 
+            table.AddCell(cell);
+            foreach (DataColumn col in dt.Columns)
+            {
+                table.AddCell(new Paragraph(col.ColumnName, f));
+            }
+            foreach (DataRow r in dt.Rows)
+            {
+                foreach (DataColumn c in dt.Columns)
+                {
+                    string v = r[c.ColumnName] + "";
+                    Paragraph pra = new Paragraph(v, f);
+                    table.AddCell(pra);
+                }
+            }
+            document.Add(table);
         }
 
         /// <summary>

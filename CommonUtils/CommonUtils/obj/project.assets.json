@@ -194,6 +194,17 @@
           "lib/net45/ServiceStack.Text.dll": {}
         }
       },
+      "Spire.PDF/6.5.15": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Spire.License.dll": {},
+          "lib/net40/Spire.Pdf.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Spire.License.dll": {},
+          "lib/net40/Spire.Pdf.dll": {}
+        }
+      },
       "System.Buffers/4.4.0": {
         "type": "package",
         "compile": {
@@ -620,6 +631,17 @@
         },
         "runtime": {
           "lib/net45/ServiceStack.Text.dll": {}
+        }
+      },
+      "Spire.PDF/6.5.15": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Spire.License.dll": {},
+          "lib/net40/Spire.Pdf.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Spire.License.dll": {},
+          "lib/net40/Spire.Pdf.dll": {}
         }
       },
       "System.Buffers/4.4.0": {
@@ -1127,6 +1149,46 @@
         "lib/netstandard2.0/ServiceStack.Text.xml",
         "servicestack.text.5.5.0.nupkg.sha512",
         "servicestack.text.nuspec"
+      ]
+    },
+    "Spire.PDF/6.5.15": {
+      "sha512": "4nFuuJ2A9ERgWpiWpq2Pl6DuSfe2Aw600WfL/5RBEpb+XSMvK6M5Hs9Iz8HrpnGuiYFb0Cz2ErXH+JAfVPjUKQ==",
+      "type": "package",
+      "path": "spire.pdf/6.5.15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/Spire.License.dll",
+        "lib/MonoAndroid/Spire.License.xml",
+        "lib/MonoAndroid/Spire.Pdf.dll",
+        "lib/MonoAndroid/Spire.Pdf.xml",
+        "lib/net20/Spire.License.dll",
+        "lib/net20/Spire.License.xml",
+        "lib/net20/Spire.Pdf.XML",
+        "lib/net20/Spire.Pdf.dll",
+        "lib/net40/Spire.License.dll",
+        "lib/net40/Spire.License.xml",
+        "lib/net40/Spire.Pdf.XML",
+        "lib/net40/Spire.Pdf.dll",
+        "lib/netcoreapp2.0/Spire.License.dll",
+        "lib/netcoreapp2.0/Spire.License.xml",
+        "lib/netcoreapp2.0/Spire.Pdf.dll",
+        "lib/netcoreapp2.0/Spire.Pdf.xml",
+        "lib/netcoreapp3.0/Spire.License.dll",
+        "lib/netcoreapp3.0/Spire.License.xml",
+        "lib/netcoreapp3.0/Spire.Pdf.dll",
+        "lib/netcoreapp3.0/Spire.Pdf.xml",
+        "lib/netstandard2.0/Spire.License.dll",
+        "lib/netstandard2.0/Spire.License.xml",
+        "lib/netstandard2.0/Spire.Pdf.dll",
+        "lib/netstandard2.0/Spire.Pdf.xml",
+        "lib/xamarinios/Spire.License.dll",
+        "lib/xamarinios/Spire.License.xml",
+        "lib/xamarinios/Spire.Pdf.dll",
+        "lib/xamarinios/Spire.Pdf.xml",
+        "license.txt",
+        "spire.pdf.6.5.15.nupkg.sha512",
+        "spire.pdf.nuspec"
       ]
     },
     "System.Buffers/4.4.0": {
@@ -1693,6 +1755,7 @@
       "ICSharpCode.SharpZipLib.Patched >= 0.86.5.1",
       "MySql.Data >= 8.0.15",
       "ServiceStack.Redis >= 5.5.0",
+      "Spire.PDF >= 6.5.15",
       "ZedGraph >= 5.1.7",
       "iTextSharp >= 5.5.13",
       "log4net >= 2.0.8"
@@ -1703,6 +1766,7 @@
       "ICSharpCode.SharpZipLib.Patched >= 0.86.5.1",
       "MySql.Data >= 8.0.15",
       "ServiceStack.Redis >= 5.5.0",
+      "Spire.PDF >= 6.5.15",
       "ZedGraph >= 5.1.7",
       "iTextSharp >= 5.5.13",
       "log4net >= 2.0.8"
@@ -1774,6 +1838,10 @@
             "target": "Package",
             "version": "[5.5.0, )"
           },
+          "Spire.PDF": {
+            "target": "Package",
+            "version": "[6.5.15, )"
+          },
           "ZedGraph": {
             "target": "Package",
             "version": "[5.1.7, )"
@@ -1810,6 +1878,10 @@
           "ServiceStack.Redis": {
             "target": "Package",
             "version": "[5.5.0, )"
+          },
+          "Spire.PDF": {
+            "target": "Package",
+            "version": "[6.5.15, )"
           },
           "ZedGraph": {
             "target": "Package",

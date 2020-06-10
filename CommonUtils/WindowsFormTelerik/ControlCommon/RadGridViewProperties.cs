@@ -14,7 +14,10 @@ namespace WindowsFormTelerik.ControlCommon
         {
             Normal,
             Qualification,
-            Disqualification
+            Disqualification,
+            Conduction,
+            UnConduction,
+            OpenCircuit
         }
         public static void SetRadGridViewProperty(RadGridView gridView, bool allowAddNewRow,bool IsReadOnly,int columnCount)
         {
@@ -72,13 +75,25 @@ namespace WindowsFormTelerik.ControlCommon
                 obj.CellBackColor = Color.Red;
                 obj.TextAlignment = ContentAlignment.MiddleCenter;
             }
-            if (columnCount > 0)
+            else if (viewRecordEnum == GridViewRecordEnum.Conduction)
             {
-                for (int i = 0; i < columnCount; i++)
-                {
-                    gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
-                }
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "导通", "", true);
+                obj.CellBackColor = Color.LawnGreen;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
             }
+            else if (viewRecordEnum == GridViewRecordEnum.UnConduction)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不导通", "", true);
+                obj.CellBackColor = Color.Red;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.OpenCircuit)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "开路", "", true);
+                obj.CellBackColor = Color.OrangeRed;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            gridView.Columns[columnCount].ConditionalFormattingObjectList.Add(obj);
         }
 
         public static void ClearGridView(RadGridView radGridView, System.Data.DataTable data)
@@ -94,6 +109,15 @@ namespace WindowsFormTelerik.ControlCommon
                 data.Rows.Clear();
                 radGridView.DataSource = data;
             }
+        }
+
+        public static bool IsSelectRow(RadGridView radGrid)
+        {
+            if (radGrid.CurrentRow == null)
+                return false;
+            if (radGrid.CurrentRow.Index < 0)
+                return false;
+            return true;
         }
     }
 }

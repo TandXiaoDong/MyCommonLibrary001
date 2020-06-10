@@ -320,3 +320,5 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.pdb
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\Spire.License.dll
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\Spire.Pdf.dll
