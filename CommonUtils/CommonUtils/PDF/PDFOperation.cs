@@ -167,6 +167,7 @@ namespace CommonUtils.PDF
             PdfPCell cell = new PdfPCell(new Phrase(title, f));
             cell.Colspan = dt.Columns.Count;
             cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right 
+            
             table.AddCell(cell);
             foreach (DataColumn col in dt.Columns)
             {
