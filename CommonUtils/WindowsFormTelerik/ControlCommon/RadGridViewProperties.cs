@@ -17,7 +17,8 @@ namespace WindowsFormTelerik.ControlCommon
             Disqualification,
             Conduction,
             UnConduction,
-            OpenCircuit
+            OpenCircuit,
+            CurrentRow
         }
         public static void SetRadGridViewProperty(RadGridView gridView, bool allowAddNewRow,bool IsReadOnly,int columnCount)
         {
@@ -55,6 +56,22 @@ namespace WindowsFormTelerik.ControlCommon
             }
         }
 
+        public static void SetGridViewRowStyle(RadGridView gridView, int colIndex, string content)
+        {
+            foreach (var rowInfo in gridView.Rows)
+            {
+                if (rowInfo.Cells[colIndex].Value.ToString() == content)
+                {
+                    ConditionalFormattingObject obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, content, "", true);
+                    obj.CellBackColor = Color.LawnGreen;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    for (int i = 0; i < gridView.ColumnCount; i++)
+                    {
+                        gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
+                    }
+                }
+            }
+        }
         public static void SetRadGridViewStyle(RadGridView gridView,int columnCount,GridViewRecordEnum viewRecordEnum)
         {
             ConditionalFormattingObject obj = null;
@@ -92,6 +109,16 @@ namespace WindowsFormTelerik.ControlCommon
                 obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "开路", "", true);
                 obj.CellBackColor = Color.OrangeRed;
                 obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.CurrentRow)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.NotEqual, "", "", true);
+                obj.CellBackColor = Color.Red;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+                for (int i = 0;i < gridView.ColumnCount;i++)
+                {
+                    gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
+                }
             }
             gridView.Columns[columnCount].ConditionalFormattingObjectList.Add(obj);
         }

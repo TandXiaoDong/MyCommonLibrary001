@@ -164,22 +164,39 @@ namespace CommonUtils.PDF
             Font f = new Font(basefont);
 
             PdfPTable table = new PdfPTable(dt.Columns.Count);
+
+            int[] widths = { 12, 12, 25, 21, 25, 25, 25, 15, 15 };
+            table.WidthPercentage = 100;
+            table.TotalWidth = this.rect.Width;
+            table.HorizontalAlignment = Element.ALIGN_CENTER;
+            
+            //table.SetWidths(new int[] { 74, 38, 35, 45, 40, 40, 40, 42, 40, 44 });
             PdfPCell cell = new PdfPCell(new Phrase(title, f));
             cell.Colspan = dt.Columns.Count;
             cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right 
-            
             table.AddCell(cell);
             foreach (DataColumn col in dt.Columns)
             {
-                table.AddCell(new Paragraph(col.ColumnName, f));
+                PdfPCell cel = new PdfPCell();
+                cel.VerticalAlignment = Element.ALIGN_CENTER;
+                cel.HorizontalAlignment = Element.ALIGN_RIGHT;
+                Paragraph paragraph = new Paragraph(col.ColumnName, f);
+                paragraph.Alignment = Element.ALIGN_CENTER;
+                cel.AddElement(paragraph);
+                table.AddCell(cel);
             }
             foreach (DataRow r in dt.Rows)
             {
                 foreach (DataColumn c in dt.Columns)
                 {
                     string v = r[c.ColumnName] + "";
+                    PdfPCell cel = new PdfPCell();
+                    cel.VerticalAlignment = Element.ALIGN_CENTER;
+                    cel.HorizontalAlignment = Element.ALIGN_RIGHT;
                     Paragraph pra = new Paragraph(v, f);
-                    table.AddCell(pra);
+                    pra.Alignment = Element.ALIGN_CENTER;
+                    cel.AddElement(pra);
+                    table.AddCell(cel);
                 }
             }
             document.Add(table);
