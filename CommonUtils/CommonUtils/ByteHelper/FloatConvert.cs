@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommonUtils.Logger;
 
 namespace CommonUtils.ByteHelper
 {
@@ -12,12 +13,7 @@ namespace CommonUtils.ByteHelper
         {
             //var f = Convert.ToSingle(fStr);
             byte[] b = BitConverter.GetBytes(f);
-            var fByte = "";
-            foreach (int tmp in b)
-            {
-                fByte += Convert.ToString(tmp, 16);
-            }
-            return fByte;
+            return BitConverter.ToString(b).Replace("-","");
         }
     }
 }

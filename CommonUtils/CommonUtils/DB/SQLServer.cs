@@ -123,7 +123,7 @@ namespace CommonUtils.DB
             try
             {
                 if (Command == null)
-                    throw new ArgumentNullException("command");
+                    LogHelper.Log.Error("command is null...");
                 if (commandText == null || commandText.Length == 0) throw new ArgumentNullException("commandText");
 
                 if (Connection.State != ConnectionState.Open)
@@ -146,7 +146,7 @@ namespace CommonUtils.DB
                 if (transaction != null)
                 {
                     if (transaction.Connection == null)
-                        throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+                        LogHelper.Log.Error("The transaction was rollbacked or commited, please provide an open transaction.");
                     Command.Transaction = transaction;
                 }
 
@@ -421,62 +421,40 @@ namespace CommonUtils.DB
 
         public static DbDataReader ExecuteDataReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
         {
-            if (connection == null) throw new ArgumentNullException("connection");
+            if (connection == null) 
+                LogHelper.Log.Error("connection = null....");
             DbDataReader reader = null;
             bool mustCloseConnection = false;
             SqlCommand Command = new SqlCommand();
             try
             {
                 PrepareCommand(connection, Command, transaction, commandType, commandText, commandParameters, out mustCloseConnection);
-
                 reader = Command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-
-                //reader = Command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-
                 Command.Parameters.Clear();//清空
-                //Command.Dispose();
+                Command.Dispose();
             }
             catch (Exception ex)
             {
-
+                LogHelper.Log.Error(ex.Message + ex.StackTrace);
             }
             return reader;
         }
         public static DbDataReader ExecuteDataReader(SqlTransaction transaction, CommandType commandType, string commandText)
         {
             if (SqlConnectionString == null || SqlConnectionString.Length == 0) throw new ArgumentNullException("ConnectionString");
-            SqlConnection connection = null;
-            try
+            using (SqlConnection connection = new SqlConnection(SqlConnectionString))
             {
-                connection = new SqlConnection(SqlConnectionString);
-
                 connection.Open();
                 return ExecuteDataReader(connection, transaction, commandType, commandText, (SqlParameter[])null);
-            }
-            catch
-            {
-                // If we fail to return the SqlDatReader, we need to close the connection ourselves
-                if (connection != null) connection.Close();
-                throw;
             }
         }
         public static DbDataReader ExecuteDataReader(CommandType commandType, string commandText, params SqlParameter[] commandParameters)
         {
-            if (SqlConnectionString == null || SqlConnectionString.Length == 0) throw new ArgumentNullException("ConnectionString");
-            SqlConnection connection = null;
-            try
-            {
-                connection = new SqlConnection(SqlConnectionString);
-
-                connection.Open();
-                return ExecuteDataReader(connection, (SqlTransaction)null, commandType, commandText, commandParameters);
-            }
-            catch
-            {
-                // If we fail to return the SqlDatReader, we need to close the connection ourselves
-                if (connection != null) connection.Close();
-                throw;
-            }
+            if (SqlConnectionString == null || SqlConnectionString.Length == 0) 
+                LogHelper.Log.Error("ConnectionString is null...");
+            SqlConnection connection = new SqlConnection(SqlConnectionString);
+            connection.Open();
+            return ExecuteDataReader(connection, (SqlTransaction)null, commandType, commandText, commandParameters);
         }
         public static DbDataReader ExecuteDataReader(CommandType commandType, string commandText)
         {
@@ -499,7 +477,6 @@ namespace CommonUtils.DB
                 reader = Command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);// (CommandBehavior.CloseConnection);
                 Command.Parameters.Clear();//清空
                 Command.Dispose();
-
             }
             catch (Exception ex)
             {
@@ -509,19 +486,10 @@ namespace CommonUtils.DB
         public static DbDataReader ExecuteDataReader(out List<string[]> outParameters, string SqlSPro, params SqlParameter[] commandParameters)
         {
             if (SqlConnectionString == null || SqlConnectionString.Length == 0) throw new ArgumentNullException("ConnectionString");
-            SqlConnection connection = null;
-            try
+            using (SqlConnection connection = new SqlConnection(SqlConnectionString))
             {
-                connection = new SqlConnection(SqlConnectionString);
-
                 connection.Open();
                 return ExecuteDataReader(connection, out outParameters, SqlSPro, CommandType.StoredProcedure, commandParameters);
-            }
-            catch
-            {
-                // If we fail to return the SqlDatReader, we need to close the connection ourselves
-                if (connection != null) connection.Close();
-                throw;
             }
         }
         #endregion

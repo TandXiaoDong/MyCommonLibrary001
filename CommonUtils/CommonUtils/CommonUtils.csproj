@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFrameworks>net4.6.1</TargetFrameworks>
+	<TargetFrameworks>net4.5.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,56 +15,57 @@
     <PackageReference Include="ICSharpCode.SharpZipLib.Patched" Version="0.86.5.1" />
     <PackageReference Include="iTextSharp" Version="5.5.13" />
     <PackageReference Include="log4net" Version="2.0.8" />
-    <PackageReference Include="MySql.Data" Version="8.0.15" />
+    <PackageReference Include="MySql.Data" Version="6.7.9" />
     <PackageReference Include="ServiceStack.Redis" Version="5.5.0" />
     <PackageReference Include="ZedGraph" Version="5.1.7" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="Telerik.Documents.SpreadsheetStreaming">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
     <Reference Include="TelerikCommon">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
     </Reference>
     <Reference Include="TelerikData">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
     </Reference>
     <Reference Include="TelerikExport">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\CRTMonitor\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CableTestSystem\project\CableTestManager\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
     </Reference>
   </ItemGroup>
 

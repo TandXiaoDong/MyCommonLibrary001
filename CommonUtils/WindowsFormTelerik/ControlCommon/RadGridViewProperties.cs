@@ -14,7 +14,10 @@ namespace WindowsFormTelerik.ControlCommon
         {
             Normal,
             Qualification,
-            Disqualification
+            Disqualification,
+            OpenCircuit,
+            Conduction,
+            UnConduction
         }
         public static void SetRadGridViewProperty(RadGridView gridView, bool allowAddNewRow,bool IsReadOnly,int columnCount)
         {
@@ -52,36 +55,46 @@ namespace WindowsFormTelerik.ControlCommon
             }
         }
 
-        public static void SetRadGridViewStyle(RadGridView gridView,int columnCount,GridViewRecordEnum viewRecordEnum)
+        public static void SetRadGridViewStyle(RadGridView gridView,int columnIndex,GridViewRecordEnum viewRecordEnum)
         {
             ConditionalFormattingObject obj = null;
-            if (viewRecordEnum == GridViewRecordEnum.Normal)
+            switch (viewRecordEnum)
             {
-                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "", "", true);
-                obj.TextAlignment = ContentAlignment.MiddleCenter;
+                case GridViewRecordEnum.Normal:
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "", "", true);
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    break;
+                case GridViewRecordEnum.Qualification:
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "合格", "", true);
+                    obj.CellBackColor = Color.LawnGreen;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    break;
+                case GridViewRecordEnum.Disqualification:
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不合格", "", true);
+                    obj.CellBackColor = Color.Red;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    break;
+                case GridViewRecordEnum.OpenCircuit:
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "开路", "", true);
+                    obj.CellBackColor = Color.OrangeRed;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    break;
+                case GridViewRecordEnum.Conduction:
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "导通", "", true);
+                    obj.CellBackColor = Color.LawnGreen;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    break;
+                case GridViewRecordEnum.UnConduction:
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不导通", "", true);
+                    obj.CellBackColor = Color.Red;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    break;
             }
-            else if (viewRecordEnum == GridViewRecordEnum.Qualification)
-            {
-                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "合格", "", true);
-                obj.CellBackColor = Color.LawnGreen;
-                obj.TextAlignment = ContentAlignment.MiddleCenter;
-            }
-            else if (viewRecordEnum == GridViewRecordEnum.Disqualification)
-            {
-                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不合格", "", true);
-                obj.CellBackColor = Color.Red;
-                obj.TextAlignment = ContentAlignment.MiddleCenter;
-            }
-            if (columnCount > 0)
-            {
-                for (int i = 0; i < columnCount; i++)
-                {
-                    gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
-                }
-            }
+            
+            gridView.Columns[columnIndex].ConditionalFormattingObjectList.Add(obj);
         }
 
-        public static void ClearGridView(RadGridView radGridView)
+        public static void ClearGridView(RadGridView radGridView,System.Data.DataTable datasource)
         {
             if (radGridView.RowCount < 1)
                 return;
@@ -89,6 +102,10 @@ namespace WindowsFormTelerik.ControlCommon
             {
                 radGridView.Rows[i].Delete();
             }
+            if (datasource == null)
+                return;
+            datasource.Rows.Clear();
+            radGridView.DataSource = datasource;
         }
     }
 }

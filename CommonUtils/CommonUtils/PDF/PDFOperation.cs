@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Data;
+using System;
 
 namespace CommonUtils.PDF
 {
@@ -16,6 +18,15 @@ namespace CommonUtils.PDF
     //-------------------------------------------------------------------------------------
     public class PDFOperation
     {
+        #region 私有字段
+        private Font font;
+        private Rectangle rect;   //文档大小
+        private Document document;//文档对象
+        private BaseFont basefont;//字体
+        private PdfWriter pdfWriter;
+        private PdfContentByte contentByte;
+        #endregion
+
         #region 构造函数
         /// <summary>
         /// 构造函数
@@ -49,13 +60,6 @@ namespace CommonUtils.PDF
             SetPageSize(type);
             document = new Document(rect, marginLeft, marginRight, marginTop, marginBottom);
         }
-        #endregion
-
-        #region 私有字段
-        private Font font;
-        private Rectangle rect;   //文档大小
-        private Document document;//文档对象
-        private BaseFont basefont;//字体
         #endregion
 
         #region 设置字体
@@ -103,7 +107,7 @@ namespace CommonUtils.PDF
         /// <param name="os">文档相关信息（如路径，打开方式等）</param>
         public void GetInstance(Stream os)
         {
-            PdfWriter.GetInstance(document, os);
+            this.pdfWriter = PdfWriter.GetInstance(document, os);
         }
         #endregion
 
@@ -116,6 +120,7 @@ namespace CommonUtils.PDF
         {
             GetInstance(os);
             document.Open();
+            this.contentByte = this.pdfWriter.DirectContent;
         }
         #endregion
 
@@ -140,6 +145,20 @@ namespace CommonUtils.PDF
             SetFont(fontsize);
             Paragraph pra = new Paragraph(content, font);
             document.Add(pra);
+        }
+
+        public void AddLine(int fheight)
+        {
+            //default font=20,rowSize = 30
+            SetFont(10);
+            int topHeight = 45;
+            contentByte.SetColorStroke(new CMYKColor(42f, 42f, 42f, 42f));
+            contentByte.SetColorFill(new CMYKColor(42f,42f,42f,42f));
+            var cY = this.rect.Height - topHeight - fheight;
+            contentByte.MoveTo(35, cY);
+            contentByte.LineTo(this.rect.Width - 35, cY);
+            contentByte.Stroke();
+            contentByte.ClosePathStroke();
         }
 
         /// <summary>
@@ -169,6 +188,38 @@ namespace CommonUtils.PDF
                 pra.MultipliedLeading = MultipliedLeading;
             }
             document.Add(pra);
+        }
+
+        public void AddParagraph(string titleText,DataTable dt,float fontSize)
+        {
+            SetFont(fontSize);
+            Font f = new Font(basefont);
+            PdfPTable table = new PdfPTable(dt.Columns.Count);
+            table.DefaultCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            table.TotalWidth = this.rect.Width - 220;
+            //table.SetWidthPercentage(new float[] { 45,45},this.rect);
+
+            PdfPCell pdfPCell = new PdfPCell(new Phrase(titleText, f));
+            pdfPCell.Colspan = dt.Columns.Count;
+            pdfPCell.HorizontalAlignment = 1;
+            pdfPCell.Left = 0;
+            pdfPCell.Right = 2;
+            table.AddCell(pdfPCell);
+            foreach (DataColumn col in dt.Columns)
+            {
+                table.AddCell(new Paragraph(col.ColumnName, f));
+            }
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    var str = dr[dc.ColumnName] + "";
+                    Paragraph pra = new Paragraph(str);
+                    table.AddCell(pra);
+                }
+            }
+            document.Add(table);
         }
         #endregion
 
