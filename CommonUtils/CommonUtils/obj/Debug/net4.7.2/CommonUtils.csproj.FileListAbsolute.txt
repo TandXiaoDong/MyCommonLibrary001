@@ -128,3 +128,5 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.pdb
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.7.2\CommonUtils.csprojAssemblyReference.cache
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.7.2\Spire.License.dll
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.7.2\Spire.Pdf.dll

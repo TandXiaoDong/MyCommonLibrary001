@@ -320,6 +320,7 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\obj\Debug\net4.6.1\CommonUtils.pdb
+<<<<<<< HEAD
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\BouncyCastle.Crypto.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\K4os.Compression.LZ4.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\K4os.Compression.LZ4.Streams.dll
@@ -327,3 +328,7 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\Ubiety.Dns.Core.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\Zstandard.Net.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\Renci.SshNet.dll
+=======
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\Spire.License.dll
+D:\WorkDocument\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CommonUtils\bin\Debug\net4.6.1\Spire.Pdf.dll
+>>>>>>> 3ee5b2964fd9167cf2566618f6524a7b4a3249a4

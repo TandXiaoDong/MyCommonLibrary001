@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+
 	<TargetFrameworks>net4.5.1</TargetFrameworks>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +19,7 @@
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="MySql.Data" Version="6.7.9" />
     <PackageReference Include="ServiceStack.Redis" Version="5.5.0" />
+    <PackageReference Include="Spire.PDF" Version="6.5.15" />
     <PackageReference Include="ZedGraph" Version="5.1.7" />
   </ItemGroup>
 

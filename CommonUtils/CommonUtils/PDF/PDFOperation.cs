@@ -2,7 +2,6 @@
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Data;
-using System;
 
 namespace CommonUtils.PDF
 {
@@ -25,6 +24,7 @@ namespace CommonUtils.PDF
         private BaseFont basefont;//字体
         private PdfWriter pdfWriter;
         private PdfContentByte contentByte;
+
         #endregion
 
         #region 构造函数
@@ -120,7 +120,7 @@ namespace CommonUtils.PDF
         {
             GetInstance(os);
             document.Open();
-            this.contentByte = this.pdfWriter.DirectContent;
+            this.contentByte = pdfWriter.DirectContent;
         }
         #endregion
 
@@ -147,18 +147,59 @@ namespace CommonUtils.PDF
             document.Add(pra);
         }
 
-        public void AddLine(int fheight)
+        public void AddLine(int sizeHight)
         {
-            //default font=20,rowSize = 30
-            SetFont(10);
-            int topHeight = 45;
-            contentByte.SetColorStroke(new CMYKColor(42f, 42f, 42f, 42f));
-            contentByte.SetColorFill(new CMYKColor(42f,42f,42f,42f));
-            var cY = this.rect.Height - topHeight - fheight;
-            contentByte.MoveTo(35, cY);
-            contentByte.LineTo(this.rect.Width - 35, cY);
-            contentByte.Stroke();
-            contentByte.ClosePathStroke();
+            //this.contentByte.SetFontAndSize(this.basefont, fontsize);
+            this.contentByte.SaveState();
+            this.contentByte.SetLineWidth(1.0f);   // Make a bit thicker than 1.0 default
+            this.contentByte.MoveTo(35, this.rect.Height - sizeHight);
+            this.contentByte.LineTo(this.rect.Width - 35, this.rect.Height - sizeHight);
+            this.contentByte.Stroke();
+            this.contentByte.RestoreState();
+        }
+
+        public void AddParagraph(string title, System.Data.DataTable dt, float fontsize)
+        {
+            SetFont(fontsize);
+            Font f = new Font(basefont);
+
+            PdfPTable table = new PdfPTable(dt.Columns.Count);
+
+            int[] widths = { 12, 12, 25, 21, 25, 25, 25, 15, 15 };
+            table.WidthPercentage = 100;
+            table.TotalWidth = this.rect.Width;
+            table.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            //table.SetWidths(new int[] { 74, 38, 35, 45, 40, 40, 40, 42, 40, 44 });
+            PdfPCell cell = new PdfPCell(new Phrase(title, f));
+            cell.Colspan = dt.Columns.Count;
+            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right 
+            table.AddCell(cell);
+            foreach (DataColumn col in dt.Columns)
+            {
+                PdfPCell cel = new PdfPCell();
+                cel.VerticalAlignment = Element.ALIGN_CENTER;
+                cel.HorizontalAlignment = Element.ALIGN_RIGHT;
+                Paragraph paragraph = new Paragraph(col.ColumnName, f);
+                paragraph.Alignment = Element.ALIGN_CENTER;
+                cel.AddElement(paragraph);
+                table.AddCell(cel);
+            }
+            foreach (DataRow r in dt.Rows)
+            {
+                foreach (DataColumn c in dt.Columns)
+                {
+                    string v = r[c.ColumnName] + "";
+                    PdfPCell cel = new PdfPCell();
+                    cel.VerticalAlignment = Element.ALIGN_CENTER;
+                    cel.HorizontalAlignment = Element.ALIGN_RIGHT;
+                    Paragraph pra = new Paragraph(v, f);
+                    pra.Alignment = Element.ALIGN_CENTER;
+                    cel.AddElement(pra);
+                    table.AddCell(cel);
+                }
+            }
+            document.Add(table);
         }
 
         /// <summary>
@@ -188,38 +229,6 @@ namespace CommonUtils.PDF
                 pra.MultipliedLeading = MultipliedLeading;
             }
             document.Add(pra);
-        }
-
-        public void AddParagraph(string titleText,DataTable dt,float fontSize)
-        {
-            SetFont(fontSize);
-            Font f = new Font(basefont);
-            PdfPTable table = new PdfPTable(dt.Columns.Count);
-            table.DefaultCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-            table.TotalWidth = this.rect.Width - 220;
-            //table.SetWidthPercentage(new float[] { 45,45},this.rect);
-
-            PdfPCell pdfPCell = new PdfPCell(new Phrase(titleText, f));
-            pdfPCell.Colspan = dt.Columns.Count;
-            pdfPCell.HorizontalAlignment = 1;
-            pdfPCell.Left = 0;
-            pdfPCell.Right = 2;
-            table.AddCell(pdfPCell);
-            foreach (DataColumn col in dt.Columns)
-            {
-                table.AddCell(new Paragraph(col.ColumnName, f));
-            }
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                foreach (DataColumn dc in dt.Columns)
-                {
-                    var str = dr[dc.ColumnName] + "";
-                    Paragraph pra = new Paragraph(str);
-                    table.AddCell(pra);
-                }
-            }
-            document.Add(table);
         }
         #endregion
 

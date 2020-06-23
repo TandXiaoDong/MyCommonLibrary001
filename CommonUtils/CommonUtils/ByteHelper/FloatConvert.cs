@@ -12,6 +12,7 @@ namespace CommonUtils.ByteHelper
         public static string FloatConvertByte(float f)
         {
             //var f = Convert.ToSingle(fStr);
+            
             byte[] b = BitConverter.GetBytes(f);
             return BitConverter.ToString(b).Replace("-","");
         }

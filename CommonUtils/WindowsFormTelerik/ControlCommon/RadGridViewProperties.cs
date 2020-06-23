@@ -15,11 +15,12 @@ namespace WindowsFormTelerik.ControlCommon
             Normal,
             Qualification,
             Disqualification,
-            OpenCircuit,
             Conduction,
-            UnConduction
+            UnConduction,
+            OpenCircuit,
+            CurrentRow
         }
-        public static void SetRadGridViewProperty(RadGridView gridView, bool allowAddNewRow,bool IsReadOnly,int columnCount)
+        public static void SetRadGridViewProperty(RadGridView gridView, bool allowAddNewRow, bool IsReadOnly, int columnCount)
         {
             gridView.EnableGrouping = false;
             gridView.AllowDrop = true;
@@ -55,46 +56,74 @@ namespace WindowsFormTelerik.ControlCommon
             }
         }
 
-        public static void SetRadGridViewStyle(RadGridView gridView,int columnIndex,GridViewRecordEnum viewRecordEnum)
+        public static void SetGridViewRowStyle(RadGridView gridView, int colIndex, string content)
+        {
+            foreach (var rowInfo in gridView.Rows)
+            {
+                if (rowInfo.Cells[colIndex].Value.ToString() == content)
+                {
+                    ConditionalFormattingObject obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, content, "", true);
+                    obj.CellBackColor = Color.LawnGreen;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                    for (int i = 0; i < gridView.ColumnCount; i++)
+                    {
+                        gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
+                    }
+                }
+            }
+        }
+        public static void SetRadGridViewStyle(RadGridView gridView, int columnCount, GridViewRecordEnum viewRecordEnum)
         {
             ConditionalFormattingObject obj = null;
-            switch (viewRecordEnum)
+            if (viewRecordEnum == GridViewRecordEnum.Normal)
             {
-                case GridViewRecordEnum.Normal:
-                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "", "", true);
-                    obj.TextAlignment = ContentAlignment.MiddleCenter;
-                    break;
-                case GridViewRecordEnum.Qualification:
-                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "合格", "", true);
-                    obj.CellBackColor = Color.LawnGreen;
-                    obj.TextAlignment = ContentAlignment.MiddleCenter;
-                    break;
-                case GridViewRecordEnum.Disqualification:
-                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不合格", "", true);
-                    obj.CellBackColor = Color.Red;
-                    obj.TextAlignment = ContentAlignment.MiddleCenter;
-                    break;
-                case GridViewRecordEnum.OpenCircuit:
-                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "开路", "", true);
-                    obj.CellBackColor = Color.OrangeRed;
-                    obj.TextAlignment = ContentAlignment.MiddleCenter;
-                    break;
-                case GridViewRecordEnum.Conduction:
-                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "导通", "", true);
-                    obj.CellBackColor = Color.LawnGreen;
-                    obj.TextAlignment = ContentAlignment.MiddleCenter;
-                    break;
-                case GridViewRecordEnum.UnConduction:
-                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不导通", "", true);
-                    obj.CellBackColor = Color.Red;
-                    obj.TextAlignment = ContentAlignment.MiddleCenter;
-                    break;
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "", "", true);
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
             }
-            
-            gridView.Columns[columnIndex].ConditionalFormattingObjectList.Add(obj);
+            else if (viewRecordEnum == GridViewRecordEnum.Qualification)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "合格", "", true);
+                obj.CellBackColor = Color.LawnGreen;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.Disqualification)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不合格", "", true);
+                obj.CellBackColor = Color.Red;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.Conduction)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "导通", "", true);
+                obj.CellBackColor = Color.LawnGreen;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.UnConduction)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不导通", "", true);
+                obj.CellBackColor = Color.Red;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.OpenCircuit)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "开路", "", true);
+                obj.CellBackColor = Color.OrangeRed;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.CurrentRow)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.NotEqual, "", "", true);
+                obj.CellBackColor = Color.Red;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+                for (int i = 0; i < gridView.ColumnCount; i++)
+                {
+                    gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
+                }
+            }
+            gridView.Columns[columnCount].ConditionalFormattingObjectList.Add(obj);
         }
 
-        public static void ClearGridView(RadGridView radGridView,System.Data.DataTable datasource)
+        public static void ClearGridView(RadGridView radGridView, System.Data.DataTable data)
         {
             if (radGridView.RowCount < 1)
                 return;
@@ -102,10 +131,20 @@ namespace WindowsFormTelerik.ControlCommon
             {
                 radGridView.Rows[i].Delete();
             }
-            if (datasource == null)
-                return;
-            datasource.Rows.Clear();
-            radGridView.DataSource = datasource;
+            if (data != null)
+            {
+                data.Rows.Clear();
+                radGridView.DataSource = data;
+            }
+        }
+
+        public static bool IsSelectRow(RadGridView radGrid)
+        {
+            if (radGrid.CurrentRow == null)
+                return false;
+            if (radGrid.CurrentRow.Index < 0)
+                return false;
+            return true;
         }
     }
 }
