@@ -162,6 +162,83 @@ namespace WindowsFormTelerik.GridViewExportData
             }
         }
 
+        public static int DataTableToExcel(DataTable data, string sheetName, bool isColumnWritten)
+        {
+            int i = 0;
+            int j = 0;
+            int count = 0;
+            ISheet sheet = null;
+            if (null == data || data.Rows.Count <= 0)
+                return 0;
+            var fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
+            if (fileName == "")
+                return 0;
+            fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            if (fileName.IndexOf(".xlsx") > 0) // 2007版本
+                workbook = new XSSFWorkbook();
+            else if (fileName.IndexOf(".xls") > 0) // 2003版本
+                workbook = new HSSFWorkbook();
+
+            try
+            {
+                if (workbook != null)
+                {
+                    sheet = workbook.CreateSheet(sheetName);
+                }
+                else
+                {
+                    return -1;
+                }
+
+                if (isColumnWritten == true) //写入DataTable的列名
+                {
+                    IRow row = sheet.CreateRow(0);
+                    for (j = 0; j < data.Columns.Count; ++j)
+                    {
+                        row.CreateCell(j).SetCellValue(data.Columns[j].ColumnName);
+                    }
+                    count = 1;
+                }
+                else
+                {
+                    count = 0;
+                }
+
+                for (i = 0; i < data.Rows.Count; ++i)
+                {
+                    IRow row = sheet.CreateRow(count);
+                    for (j = 0; j < data.Columns.Count; ++j)
+                    {
+                        row.CreateCell(j).SetCellValue(data.Rows[i][j].ToString());
+                    }
+                    ++count;
+                }
+                workbook.Write(fs); //写入到excel
+                DialogResult dr = MessageBox.Show("The data in the grid was exported successfully. Do you want to open the file?",
+                    "Export to Excel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    try
+                    {
+                        System.Diagnostics.Process.Start(fileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        string message = String.Format("The file cannot be opened on your system.\nError message: {0}", ex.Message);
+                        MessageBox.Show(message, "Open File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                if (fs != null)
+                    fs.Close();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+                return -1;
+            }
+        }
+
         /// <summary>
         /// 将excel中的数据导入到DataTable中
         /// </summary>
