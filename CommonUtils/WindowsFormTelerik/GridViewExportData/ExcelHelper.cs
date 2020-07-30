@@ -167,13 +167,20 @@ namespace WindowsFormTelerik.GridViewExportData
             int j = 0;
             int count = 0;
             ISheet sheet = null;
+<<<<<<< HEAD
             //var data = RadGridViewHelper.ConvertGridViewToDataTable(radGridView, 0);
+=======
+>>>>>>> f6268b9a0c72f66ac59c06f6ed391c92bfb54c83
             if (null == data || data.Rows.Count <= 0)
                 return 0;
             var fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
             if (fileName == "")
                 return 0;
+<<<<<<< HEAD
             FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+=======
+            fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+>>>>>>> f6268b9a0c72f66ac59c06f6ed391c92bfb54c83
             if (fileName.IndexOf(".xlsx") > 0) // 2007版本
                 workbook = new XSSFWorkbook();
             else if (fileName.IndexOf(".xls") > 0) // 2003版本
@@ -214,7 +221,10 @@ namespace WindowsFormTelerik.GridViewExportData
                     ++count;
                 }
                 workbook.Write(fs); //写入到excel
+<<<<<<< HEAD
                 //RadMessageBox.SetThemeName(radGridView.ThemeName);
+=======
+>>>>>>> f6268b9a0c72f66ac59c06f6ed391c92bfb54c83
                 DialogResult dr = MessageBox.Show("The data in the grid was exported successfully. Do you want to open the file?",
                     "Export to Excel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
