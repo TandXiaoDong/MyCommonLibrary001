@@ -32,43 +32,43 @@
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="Telerik.Documents.SpreadsheetStreaming">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
     <Reference Include="TelerikCommon">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
     </Reference>
     <Reference Include="TelerikData">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
     </Reference>
     <Reference Include="TelerikExport">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\FACReadConfig\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\FigKeySentConfigurator\Project\SentConfigurator\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
     </Reference>
   </ItemGroup>
 

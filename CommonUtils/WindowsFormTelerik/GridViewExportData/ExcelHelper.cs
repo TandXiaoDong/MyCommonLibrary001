@@ -23,7 +23,7 @@ namespace WindowsFormTelerik.GridViewExportData
     {
         //private static string fileName = null; //文件名
         private static IWorkbook workbook = null;
-        private static FileStream fs = null;
+        //private static FileStream fs = null;
 
         public enum ExcelTypeEnum
         {
@@ -57,8 +57,7 @@ namespace WindowsFormTelerik.GridViewExportData
         /// <returns></returns>
         private List<string> GetSheets(string fileName)
         {
-            fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             if (fileName.IndexOf(".xlsx") > 0) // 2007版本
                 workbook = new XSSFWorkbook(fs);
             else if (fileName.IndexOf(".xls") > 0) // 2003版本
@@ -95,7 +94,7 @@ namespace WindowsFormTelerik.GridViewExportData
             var fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
             if (fileName == "")
                 return 0;
-            fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
             if (fileName.IndexOf(".xlsx") > 0) // 2007版本
                 workbook = new XSSFWorkbook();
             else if (fileName.IndexOf(".xls") > 0) // 2003版本
@@ -162,6 +161,85 @@ namespace WindowsFormTelerik.GridViewExportData
             }
         }
 
+        public static int DataTableToExcel(DataTable data, string sheetName, bool isColumnWritten)
+        {
+            int i = 0;
+            int j = 0;
+            int count = 0;
+            ISheet sheet = null;
+            //var data = RadGridViewHelper.ConvertGridViewToDataTable(radGridView, 0);
+            if (null == data || data.Rows.Count <= 0)
+                return 0;
+            var fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
+            if (fileName == "")
+                return 0;
+            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            if (fileName.IndexOf(".xlsx") > 0) // 2007版本
+                workbook = new XSSFWorkbook();
+            else if (fileName.IndexOf(".xls") > 0) // 2003版本
+                workbook = new HSSFWorkbook();
+
+            try
+            {
+                if (workbook != null)
+                {
+                    sheet = workbook.CreateSheet(sheetName);
+                }
+                else
+                {
+                    return -1;
+                }
+
+                if (isColumnWritten == true) //写入DataTable的列名
+                {
+                    IRow row = sheet.CreateRow(0);
+                    for (j = 0; j < data.Columns.Count; ++j)
+                    {
+                        row.CreateCell(j).SetCellValue(data.Columns[j].ColumnName);
+                    }
+                    count = 1;
+                }
+                else
+                {
+                    count = 0;
+                }
+
+                for (i = 0; i < data.Rows.Count; ++i)
+                {
+                    IRow row = sheet.CreateRow(count);
+                    for (j = 0; j < data.Columns.Count; ++j)
+                    {
+                        row.CreateCell(j).SetCellValue(data.Rows[i][j].ToString());
+                    }
+                    ++count;
+                }
+                workbook.Write(fs); //写入到excel
+                //RadMessageBox.SetThemeName(radGridView.ThemeName);
+                DialogResult dr = MessageBox.Show("The data in the grid was exported successfully. Do you want to open the file?",
+                    "Export to Excel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    try
+                    {
+                        System.Diagnostics.Process.Start(fileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        string message = String.Format("The file cannot be opened on your system.\nError message: {0}", ex.Message);
+                        MessageBox.Show(message, "Open File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                if (fs != null)
+                    fs.Close();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+                return -1;
+            }
+        }
+
         /// <summary>
         /// 将excel中的数据导入到DataTable中
         /// </summary>
@@ -175,11 +253,15 @@ namespace WindowsFormTelerik.GridViewExportData
             int startRow = 0;
             try
             {
-                fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-                if (fileName.IndexOf(".xlsx") > 0) // 2007版本
-                    workbook = new XSSFWorkbook(fs);
-                else if (fileName.IndexOf(".xls") > 0) // 2003版本
-                    workbook = new HSSFWorkbook(fs);
+                FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                if (Path.GetExtension(fileName) == ".xlsx")
+                {
+                    workbook = new NPOI.XSSF.UserModel.XSSFWorkbook(fs);//2007
+                }
+                else if (Path.GetExtension(fileName) == ".xls")
+                {
+                    workbook = new NPOI.HSSF.UserModel.HSSFWorkbook(fs);//2003
+                }
 
                 if (sheetName != null)
                 {
@@ -243,8 +325,100 @@ namespace WindowsFormTelerik.GridViewExportData
             catch (Exception ex)
             {
                 LogHelper.Log.Error("Exception: " + ex.Message);
+                MessageBox.Show(ex.Message, "Err", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
+        }
+
+        /// <summary>
+        /// 从传入data中某一列的路径读取Excel数据
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="sheetName"></param>
+        /// <param name="isFirstRowColumn"></param>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static bool ExcelToDataTable(DataTable data, string sheetName, string fileDir)
+        {
+            try
+            {
+                foreach (DataRow dataRow in data.Rows)
+                {
+                    var measurePath = dataRow[6].ToString();
+                    var calibraPath = dataRow[7].ToString();
+                    if (!File.Exists(measurePath))
+                        measurePath = fileDir + measurePath;
+                    if (!File.Exists(calibraPath))
+                        calibraPath = fileDir + calibraPath;
+                    if (File.Exists(measurePath))
+                    {
+                        GetIncaPathDataSource(measurePath, sheetName, 6, dataRow);
+                    }
+                    if (File.Exists(calibraPath))
+                    {
+                        GetIncaPathDataSource(calibraPath, sheetName, 7, dataRow);
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Log.Error("Exception: " + ex.Message);
+                MessageBox.Show(ex.Message, "Err", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private static void GetIncaPathDataSource(string fileName, string sheetName, int sourceColumn, DataRow dataRow)
+        {
+            ISheet sheet = null;
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            if (fileName.IndexOf(".xlsx") > 0) // 2007版本
+                workbook = new XSSFWorkbook(fs);
+            else if (fileName.IndexOf(".xls") > 0) // 2003版本
+            {
+                workbook = new HSSFWorkbook(fs);
+            }
+
+            if (sheetName != null)
+            {
+                sheet = workbook.GetSheet(sheetName);
+                if (sheet == null) //如果没有找到指定的sheetName对应的sheet，则尝试获取第一个sheet
+                {
+                    sheet = workbook.GetSheetAt(0);
+                }
+            }
+            else
+            {
+                sheet = workbook.GetSheetAt(0);
+            }
+            if (sheet != null)
+            {
+                IRow firstRow = sheet.GetRow(0);
+                int cellCount = firstRow.LastCellNum; //一行最后一个cell的编号 即总的列数
+
+                //最后一列的标号
+                int rowCount = sheet.LastRowNum;
+                StringBuilder strTemp = new StringBuilder();
+                for (int i = sheet.FirstRowNum; i <= rowCount; ++i)
+                {
+                    if (i == 0)//去掉表头
+                        continue;
+                    IRow row = sheet.GetRow(i);
+                    if (row == null) 
+                        continue; //没有数据的行默认是null　　　
+                    var segment = row.GetCell(2);
+                    var _10ms = row.GetCell(3);
+                    var _100ms = row.GetCell(4);
+                    if (segment == null && _10ms == null && _100ms == null)
+                        continue;
+                    if (row.GetCell(0) != null) //同理，没有数据的单元格都默认是null
+                        strTemp.Append(row.GetCell(0).ToString() + ",");
+                }
+                dataRow[sourceColumn] = strTemp.ToString();
+            }
+            if (fs != null)
+                fs.Close();
         }
 
         public static DataSet ExcelToDS(string filePath, ExcelTypeEnum excelType)
