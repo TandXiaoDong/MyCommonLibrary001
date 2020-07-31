@@ -10,18 +10,25 @@ namespace WindowsFormTelerik.GridViewExportData
 {
     public class RadGridViewHelper
     {
-        public static DataTable ConvertGridViewToDataTable(RadGridView gridView,int notIncludeFirstColIndex)
+        public static DataTable ConvertGridViewToDataTable(RadGridView gridView, bool IsIncludeFirstCol)
         {
             DataTable dt = new DataTable();
-            if (gridView.ColumnCount < 1)
-                return null;
+
             foreach (var col in gridView.Columns)
             {
-                if (col.Index != notIncludeFirstColIndex)
+                if (!IsIncludeFirstCol)//不包含第一列
+                {
+                    if (col.Index != 0)
+                    {
+                        dt.Columns.Add(col.Name);
+                    }
+                }
+                else
                 {
                     dt.Columns.Add(col.Name);
                 }
             }
+
             if (gridView.RowCount < 1)
                 return dt;
             foreach (var dataRow in gridView.Rows)
@@ -35,7 +42,14 @@ namespace WindowsFormTelerik.GridViewExportData
                     }
                     else
                     {
-                        dr[i] = dataRow.Cells[i + 1].Value;
+                        if (IsIncludeFirstCol)
+                        {
+                            dr[i] = dataRow.Cells[i].Value;
+                        }
+                        else
+                        {
+                            dr[i] = dataRow.Cells[i + 1].Value;
+                        }
                     }
                 }
                 dt.Rows.Add(dr);

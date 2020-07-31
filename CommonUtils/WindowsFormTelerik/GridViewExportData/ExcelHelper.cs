@@ -82,13 +82,14 @@ namespace WindowsFormTelerik.GridViewExportData
         /// <param name="isColumnWritten">DataTable的列名是否要导入</param>
         /// <param name="sheetName">要导入的excel的sheet的名称</param>
         /// <returns>导入数据行数(包含列名那一行)</returns>
-        public static int DataTableToExcel(RadGridView radGridView, string sheetName, bool isColumnWritten)
+        public static int DataTableToExcel(RadGridView radGridView, string sheetName, bool isColumnWritten, bool IsIncludeFirstCol)
         {
             int i = 0;
             int j = 0;
             int count = 0;
             ISheet sheet = null;
-            var data = RadGridViewHelper.ConvertGridViewToDataTable(radGridView, 0);
+
+            var data = RadGridViewHelper.ConvertGridViewToDataTable(radGridView, IsIncludeFirstCol);
             if (null == data || data.Rows.Count <= 0)
                 return 0;
             var fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
@@ -167,20 +168,12 @@ namespace WindowsFormTelerik.GridViewExportData
             int j = 0;
             int count = 0;
             ISheet sheet = null;
-<<<<<<< HEAD
-            //var data = RadGridViewHelper.ConvertGridViewToDataTable(radGridView, 0);
-=======
->>>>>>> f6268b9a0c72f66ac59c06f6ed391c92bfb54c83
             if (null == data || data.Rows.Count <= 0)
                 return 0;
             var fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
             if (fileName == "")
                 return 0;
-<<<<<<< HEAD
             FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-=======
-            fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
->>>>>>> f6268b9a0c72f66ac59c06f6ed391c92bfb54c83
             if (fileName.IndexOf(".xlsx") > 0) // 2007版本
                 workbook = new XSSFWorkbook();
             else if (fileName.IndexOf(".xls") > 0) // 2003版本
@@ -221,10 +214,6 @@ namespace WindowsFormTelerik.GridViewExportData
                     ++count;
                 }
                 workbook.Write(fs); //写入到excel
-<<<<<<< HEAD
-                //RadMessageBox.SetThemeName(radGridView.ThemeName);
-=======
->>>>>>> f6268b9a0c72f66ac59c06f6ed391c92bfb54c83
                 DialogResult dr = MessageBox.Show("The data in the grid was exported successfully. Do you want to open the file?",
                     "Export to Excel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
@@ -256,7 +245,7 @@ namespace WindowsFormTelerik.GridViewExportData
         /// <param name="sheetName">excel工作薄sheet的名称</param>
         /// <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
         /// <returns>返回的DataTable</returns>
-        public static System.Data.DataTable ExcelToDataTable(string sheetName, bool isFirstRowColumn,string fileName)
+        public static DataTable ExcelToDataTable(string sheetName, bool isFirstRowColumn,string fileName)
         {
             ISheet sheet = null;
             System.Data.DataTable data = new System.Data.DataTable();
