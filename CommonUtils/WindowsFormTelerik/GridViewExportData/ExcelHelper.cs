@@ -16,6 +16,8 @@ using CommonUtils.FileHelper;
 using CommonUtils.Logger;
 using Telerik.WinControls.UI;
 using Telerik.WinControls;
+using Excel= Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace WindowsFormTelerik.GridViewExportData
 {
@@ -249,16 +251,18 @@ namespace WindowsFormTelerik.GridViewExportData
         {
             ISheet sheet = null;
             System.Data.DataTable data = new System.Data.DataTable();
+            FileStream fs = null;
             int startRow = 0;
             try
             {
-                FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
                 if (Path.GetExtension(fileName) == ".xlsx")
                 {
                     workbook = new NPOI.XSSF.UserModel.XSSFWorkbook(fs);//2007
                 }
                 else if (Path.GetExtension(fileName) == ".xls")
                 {
+                    fs.Position = 0;
                     workbook = new NPOI.HSSF.UserModel.HSSFWorkbook(fs);//2003
                 }
 
@@ -324,8 +328,8 @@ namespace WindowsFormTelerik.GridViewExportData
             catch (Exception ex)
             {
                 LogHelper.Log.Error("Exception: " + ex.Message);
-                MessageBox.Show(ex.Message, "Err", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                //MessageBox.Show(ex.Message, "Err", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Aspose2Data(fileName);
             }
         }
 
@@ -458,6 +462,15 @@ namespace WindowsFormTelerik.GridViewExportData
             }
             conn.Close();
             return ds;
+        }
+
+        public static DataTable Aspose2Data(string filePath)
+        {
+            //Aspose.Cells.License li = new Aspose.Cells.License();
+            //li.SetLicense("Aspose.Cells.lic");
+            Aspose.Cells.Workbook wk = new Aspose.Cells.Workbook(filePath);
+            Aspose.Cells.Worksheet ws = wk.Worksheets[0];
+            return  ws.Cells.ExportDataTable(1, 0, ws.Cells.Rows.Count, ws.Cells.Columns.Count);
         }
     }
 }
