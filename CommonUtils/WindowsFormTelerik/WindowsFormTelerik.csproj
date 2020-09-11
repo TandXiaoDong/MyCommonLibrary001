@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormTelerik</RootNamespace>
     <AssemblyName>WindowsFormTelerik</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,16 +31,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells, Version=20.7.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\packages\Aspose.Cells.20.7.0\lib\net40\Aspose.Cells.dll</HintPath>
+    <Reference Include="Aspose.Cells, Version=19.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.19.10.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.Words, Version=20.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\packages\Aspose.Words.20.8.0\lib\net461\Aspose.Words.dll</HintPath>
-    </Reference>
-    <Reference Include="Aspose.Words.Pdf2Word, Version=20.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\packages\Aspose.Words.20.8.0\lib\net461\Aspose.Words.Pdf2Word.dll</HintPath>
+    <Reference Include="Aspose.Words, Version=20.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.20.1.0\lib\net40\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
@@ -94,75 +93,75 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.Documents.SpreadsheetStreaming, Version=2019.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Breeze.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Material, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Material.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Material.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.MaterialBlueGrey, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.MaterialBlueGrey.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.MaterialBlueGrey.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core, Version=2019.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed, Version=2019.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2019.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2019.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2019.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Zip, Version=2019.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\Telerik.Windows.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="TelerikCommon, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="TelerikData, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\TelerikData.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="TelerikExport, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\OBDAutoTestMonitor\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
+      <HintPath>..\..\..\..\FigkeyRepository\CRTAndAFCProject\project\AFCControl\lib\RCWF\2019.1.219.40\TelerikExport.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.6643.41644, Culture=neutral, processorArchitecture=MSIL">
@@ -212,6 +211,7 @@
     <Compile Include="CommonUI\WelcomeForm.designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonUtils\FileSelect.cs" />
     <Compile Include="ControlCommon\FontRool.cs" />
     <Compile Include="ControlCommon\RadGridViewProperties.cs" />
     <Compile Include="GridViewExportData\CSVHelper.cs" />
@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="RegisterBind\Encryption.cs" />
     <Compile Include="RegisterBind\ExampleTest.cs" />
+    <Compile Include="CommonUtils\LogHelper.cs" />
     <Compile Include="RegisterBind\SoftRegister.cs" />
     <Compile Include="UserControls\dgvPageControl.cs">
       <SubType>UserControl</SubType>
@@ -292,12 +293,6 @@
   <ItemGroup>
     <Content Include="RegisterBind\说明.txt" />
     <None Include="Resources\movieLab-bg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
-      <Project>{63c655e7-4d57-4343-bd57-f66f45c6779f}</Project>
-      <Name>CommonUtils</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

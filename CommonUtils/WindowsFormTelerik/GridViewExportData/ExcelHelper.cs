@@ -12,12 +12,12 @@ using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 using System.IO;
 using System.Data.OleDb;
-using CommonUtils.FileHelper;
-using CommonUtils.Logger;
 using Telerik.WinControls.UI;
 using Telerik.WinControls;
 using Excel= Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using CommonUtils.FileHelper;
+using CommonUtils.Logger;
 
 namespace WindowsFormTelerik.GridViewExportData
 {
@@ -84,7 +84,7 @@ namespace WindowsFormTelerik.GridViewExportData
         /// <param name="isColumnWritten">DataTable的列名是否要导入</param>
         /// <param name="sheetName">要导入的excel的sheet的名称</param>
         /// <returns>导入数据行数(包含列名那一行)</returns>
-        public static int DataTableToExcel(RadGridView radGridView, string sheetName, bool isColumnWritten, bool IsIncludeFirstCol)
+        public static int GridViewToExcel(RadGridView radGridView, string sheetName, bool isColumnWritten, bool IsIncludeFirstCol)
         {
             int i = 0;
             int j = 0;
@@ -164,7 +164,7 @@ namespace WindowsFormTelerik.GridViewExportData
             }
         }
 
-        public static int DataTableToExcel(DataTable data, string sheetName, bool isColumnWritten)
+        public static int DataTableToExcel(DataTable data, string sheetName, bool isColumnWritten, string fileName, bool IsShowExcel)
         {
             int i = 0;
             int j = 0;
@@ -172,10 +172,13 @@ namespace WindowsFormTelerik.GridViewExportData
             ISheet sheet = null;
             if (null == data || data.Rows.Count <= 0)
                 return 0;
-            var fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
+            if (fileName == "")
+            {
+                fileName = FileSelect.SaveAs("Microsoft Excel files(*.xls)|*.xls", "C:\\");
+            }
             if (fileName == "")
                 return 0;
-            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            FileStream fs = new FileStream(fileName, FileMode.Append);
             if (fileName.IndexOf(".xlsx") > 0) // 2007版本
                 workbook = new XSSFWorkbook();
             else if (fileName.IndexOf(".xls") > 0) // 2003版本
@@ -216,18 +219,21 @@ namespace WindowsFormTelerik.GridViewExportData
                     ++count;
                 }
                 workbook.Write(fs); //写入到excel
-                DialogResult dr = MessageBox.Show("The data in the grid was exported successfully. Do you want to open the file?",
-                    "Export to Excel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
+                if (IsShowExcel)
                 {
-                    try
+                    DialogResult dr = MessageBox.Show("The data in the grid was exported successfully. Do you want to open the file?",
+                        "Export to Excel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
                     {
-                        System.Diagnostics.Process.Start(fileName);
-                    }
-                    catch (Exception ex)
-                    {
-                        string message = String.Format("The file cannot be opened on your system.\nError message: {0}", ex.Message);
-                        MessageBox.Show(message, "Open File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        try
+                        {
+                            System.Diagnostics.Process.Start(fileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            string message = String.Format("The file cannot be opened on your system.\nError message: {0}", ex.Message);
+                            MessageBox.Show(message, "Open File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 if (fs != null)
@@ -468,6 +474,8 @@ namespace WindowsFormTelerik.GridViewExportData
         {
             //Aspose.Cells.License li = new Aspose.Cells.License();
             //li.SetLicense("Aspose.Cells.lic");
+
+
             Aspose.Cells.Workbook wk = new Aspose.Cells.Workbook(filePath);
             Aspose.Cells.Worksheet ws = wk.Worksheets[0];
             return  ws.Cells.ExportDataTable(1, 0, ws.Cells.Rows.Count, ws.Cells.Columns.Count);

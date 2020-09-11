@@ -24,58 +24,91 @@ namespace WindowsFormTelerik.GridViewExportData
             {
                 fi.Directory.Create();
             }
-            using (FileStream fs = new FileStream(fullPath, System.IO.FileMode.Create, System.IO.FileAccess.Write))
+            if (!File.Exists(fullPath))
             {
-                using (StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8))
+                using (FileStream fs = new FileStream(fullPath, FileMode.Create))
                 {
-                    try
+                    using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                     {
-                        string data = "";
-                        //写出列名称
-                        for (int i = 0; i < dt.Columns.Count; i++)
-                        {
-                            data += dt.Columns[i].ColumnName.ToString();
-                            if (i < dt.Columns.Count - 1)
-                            {
-                                data += ",";
-                            }
-                        }
-                        sw.WriteLine(data);
-                        //写出各行数据
-                        for (int i = 0; i < dt.Rows.Count; i++)
-                        {
-                            data = "";
-                            for (int j = 0; j < dt.Columns.Count; j++)
-                            {
-                                string str = dt.Rows[i][j].ToString();
-                                str = str.Replace("\"", "\"\"");//替换英文冒号 英文冒号需要换成两个冒号
-                                if (str.Contains(',') || str.Contains('"')
-                                    || str.Contains('\r') || str.Contains('\n')) //含逗号 冒号 换行符的需要放到引号中
-                                {
-                                    str = string.Format("\"{0}\"", str);
-                                }
-
-                                data += str;
-                                if (j < dt.Columns.Count - 1)
-                                {
-                                    data += ",";
-                                }
-                            }
-                            sw.WriteLine(data);
-                        }
+                        return AddCSVData(sw, dt, true);
                     }
-                    catch (Exception)
-                    {
-                        return false;
-                    }
-                    finally
-                    {
-                        sw.Close();
-                        fs.Close();
-                    }
-                    return true;
                 }
             }
+            else
+            {
+                using (FileStream fs = new FileStream(fullPath, FileMode.Append))
+                {
+                    using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+                    {
+                        return AddCSVData(sw, dt, false);
+                    }
+                }
+            }
+        }
+
+        private static bool AddCSVData(StreamWriter sw, DataTable dt, bool IsWriteCol)
+        {
+            try
+            {
+                string data = "";
+                //写出列名称
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    data += dt.Columns[i].ColumnName.ToString();
+                    if (i < dt.Columns.Count - 1)
+                    {
+                        data += ",";
+                    }
+                }
+                if (IsWriteCol)
+                {
+                    sw.WriteLine(data);
+                }
+                //写出各行数据
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    data = "";
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        string str = dt.Rows[i][j].ToString();
+                        str = str.Replace("\"", "\"\"");//替换英文冒号 英文冒号需要换成两个冒号
+                        if (str.Contains(',') || str.Contains('"')
+                            || str.Contains('\r') || str.Contains('\n')) //含逗号 冒号 换行符的需要放到引号中
+                        {
+                            str = string.Format("\"{0}\"", str);
+                        }
+
+                        data += str;
+                        if (j < dt.Columns.Count - 1)
+                        {
+                            data += ",";
+                        }
+                    }
+                    sw.WriteLine(data);
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private static bool IsExistDataRow(string fullPath)
+        {
+            if (!File.Exists(fullPath))
+            {
+                using (FileStream fs = new FileStream(fullPath, FileMode.Create))
+                {
+                    return false;
+                }
+            }
+            using (FileStream fs = new FileStream(fullPath, FileMode.Open))
+            {
+                if (fs.Length <= 0)
+                    return false;
+            }
+            return true;
         }
 
         /// <summary>

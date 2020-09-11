@@ -28,7 +28,7 @@ using Aspose.Words.Lists;
 using Aspose.Words.MailMerging;
 using Aspose.Words.Markup;
 using Aspose.Words.Math;
-using Aspose.Words.Pdf2Word;
+//using Aspose.Words.Pdf2Word;
 using Aspose.Words.Rendering;
 using Aspose.Words.Replacing;
 using Aspose.Words.Reporting;
@@ -47,13 +47,13 @@ namespace WindowsFormTelerik.GridViewExportData
     {
         public static void SaveAsExcel(string filePath)
         {
-            DataTable dt = new DataTable();
-            //Aspose.Cells.License li = new Aspose.Cells.License();
-            //li.SetLicense("Aspose.Cells.lic");
-            Aspose.Cells.Workbook wk = new Aspose.Cells.Workbook(filePath);
-            Worksheet ws = wk.Worksheets[0];
+            //DataTable dt = new DataTable();
+            ////Aspose.Cells.License li = new Aspose.Cells.License();
+            ////li.SetLicense("Aspose.Cells.lic");
+            //Aspose.Cells.Workbook wk = new Aspose.Cells.Workbook(filePath);
+            //Worksheet ws = wk.Worksheets[0];
 
-            dt = ws.Cells.ExportDataTable(0, 0, ws.Cells.Rows.Count, ws.Cells.Columns.Count);
+            //dt = ws.Cells.ExportDataTable(0, 0, ws.Cells.Rows.Count, ws.Cells.Columns.Count);
         }
     }
 }
