@@ -7,7 +7,7 @@ using System.IO;
 using System.Data;
 using System.Windows.Forms;
 
-namespace CommonUtils.FileHelper
+namespace WindowsFormTelerik.FileHelper
 {
     public class FileContent
     {

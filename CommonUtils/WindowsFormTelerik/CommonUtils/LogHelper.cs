@@ -7,7 +7,7 @@ using System.Text;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
-namespace CommonUtils.Logger
+namespace WindowsFormTelerik.Logger
 {
     public class LogHelper
     {

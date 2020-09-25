@@ -16,8 +16,8 @@ using Telerik.WinControls.UI;
 using Telerik.WinControls;
 using Excel= Microsoft.Office.Interop.Excel;
 using System.Reflection;
-using CommonUtils.FileHelper;
-using CommonUtils.Logger;
+using WindowsFormTelerik.FileHelper;
+using WindowsFormTelerik.Logger;
 
 namespace WindowsFormTelerik.GridViewExportData
 {
