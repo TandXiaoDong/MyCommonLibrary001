@@ -72,6 +72,7 @@ namespace WindowsFormTelerik.ControlCommon
                 }
             }
         }
+
         public static void SetRadGridViewStyle(RadGridView gridView, int columnCount, GridViewRecordEnum viewRecordEnum)
         {
             ConditionalFormattingObject obj = null;
@@ -96,6 +97,39 @@ namespace WindowsFormTelerik.ControlCommon
             {
                 obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "导通", "", true);
                 obj.CellBackColor = Color.LawnGreen;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.UnConduction)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不导通", "", true);
+                obj.CellBackColor = Color.Red;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.OpenCircuit)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "开路", "", true);
+                obj.CellBackColor = Color.OrangeRed;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+            }
+            else if (viewRecordEnum == GridViewRecordEnum.CurrentRow)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.NotEqual, "", "", true);
+                obj.CellBackColor = Color.Red;
+                obj.TextAlignment = ContentAlignment.MiddleCenter;
+                for (int i = 0; i < gridView.ColumnCount; i++)
+                {
+                    gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
+                }
+            }
+            gridView.Columns[columnCount].ConditionalFormattingObjectList.Add(obj);
+        }
+
+        public static void SetRadGridViewStyle(RadGridView gridView, int columnCount)
+        {
+            ConditionalFormattingObject obj = null;
+            if (viewRecordEnum == GridViewRecordEnum.Normal)
+            {
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes., "", "", true);
                 obj.TextAlignment = ContentAlignment.MiddleCenter;
             }
             else if (viewRecordEnum == GridViewRecordEnum.UnConduction)
