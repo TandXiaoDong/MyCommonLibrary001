@@ -355,7 +355,7 @@ namespace WindowsFormTelerik.GridViewExportData
             return true;
         }
 
-        public static void ImportToCSV(List<int> channelData, string path)
+        public static void ImportToCSV(List<string> channelData, string path)
         {
             if (channelData.Count == 0)
                 return;
@@ -375,16 +375,16 @@ namespace WindowsFormTelerik.GridViewExportData
                 //写入列头
                 if (!IsSavedColumns)
                 {
-                    var columns = "setVal,";
+                    var columns = "dateTime,setVal,";
                     for (int i = 1; i <= 8; i++)
                     {
                         if (i < 8)
                         {
-                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current,ch{i}_voltage,";
+                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current(mA),ch{i}_voltage(mV),";
                         }
                         else
                         {
-                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current,ch{i}_voltage";
+                            columns += $"ch{i}_tps1,ch{i}_tps2,ch{i}_current(mA),ch{i}_voltage(mV)";
                         }
                     }
                     sw.WriteLine(columns);
@@ -403,7 +403,7 @@ namespace WindowsFormTelerik.GridViewExportData
                         sb.Append(channelData[j]);
                     }
                 }
-                sw.WriteLine(sb);
+                sw.WriteLine(sb.ToString());
             }
             catch (Exception ex)
             {

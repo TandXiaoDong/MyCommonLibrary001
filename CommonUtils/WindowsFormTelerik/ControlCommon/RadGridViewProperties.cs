@@ -124,37 +124,29 @@ namespace WindowsFormTelerik.ControlCommon
             gridView.Columns[columnCount].ConditionalFormattingObjectList.Add(obj);
         }
 
-        public static void SetRadGridViewStyle(RadGridView gridView, int columnCount)
+        public static void SetRadGridViewStyle(RadGridView gridView, int setType, int colIndex, double threshold, double curVal)
         {
             ConditionalFormattingObject obj = null;
-            if (viewRecordEnum == GridViewRecordEnum.Normal)
+            if (setType == 1)//正常颜色
             {
-                obj = new ConditionalFormattingObject("myCondition", ConditionTypes., "", "", true);
+                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.None, "", "", true);
                 obj.TextAlignment = ContentAlignment.MiddleCenter;
             }
-            else if (viewRecordEnum == GridViewRecordEnum.UnConduction)
+            else//错误提示
             {
-                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "不导通", "", true);
-                obj.CellBackColor = Color.Red;
-                obj.TextAlignment = ContentAlignment.MiddleCenter;
-            }
-            else if (viewRecordEnum == GridViewRecordEnum.OpenCircuit)
-            {
-                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Equal, "开路", "", true);
-                obj.CellBackColor = Color.OrangeRed;
-                obj.TextAlignment = ContentAlignment.MiddleCenter;
-            }
-            else if (viewRecordEnum == GridViewRecordEnum.CurrentRow)
-            {
-                obj = new ConditionalFormattingObject("myCondition", ConditionTypes.NotEqual, "", "", true);
-                obj.CellBackColor = Color.Red;
-                obj.TextAlignment = ContentAlignment.MiddleCenter;
-                for (int i = 0; i < gridView.ColumnCount; i++)
+                if (threshold > curVal)
                 {
-                    gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.Less, $"{threshold}", "", true);
+                    obj.CellBackColor = Color.Red;
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
+                }
+                else
+                {
+                    obj = new ConditionalFormattingObject("myCondition", ConditionTypes.None, "", "", true);
+                    obj.TextAlignment = ContentAlignment.MiddleCenter;
                 }
             }
-            gridView.Columns[columnCount].ConditionalFormattingObjectList.Add(obj);
+            gridView.Columns[colIndex].ConditionalFormattingObjectList.Add(obj);
         }
 
         public static void ClearGridView(RadGridView radGridView, System.Data.DataTable data)

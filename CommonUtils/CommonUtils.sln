@@ -63,7 +63,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SuperSocket", "SuperSocket"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SuperSocket", "SuperSocket", "{3092C0B2-8CC3-4EFB-B5F5-E46DA13EBDCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSocketUtils", "SuperSocketUtils\SuperSocketUtils.csproj", "{4D5F5C38-5E42-4FE1-A106-450A32C8BCB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperSocketUtils", "SuperSocketUtils\SuperSocketUtils.csproj", "{4D5F5C38-5E42-4FE1-A106-450A32C8BCB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
