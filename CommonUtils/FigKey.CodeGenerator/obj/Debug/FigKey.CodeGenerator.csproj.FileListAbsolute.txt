@@ -56,7 +56,6 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Code
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\Spire.License.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\Microsoft.mshtml.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\System.Memory.dll
-F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\System.Numerics.Vectors.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\System.Buffers.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\bin\Debug\CommonUtils.pdb
@@ -67,3 +66,4 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.Code
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.dll
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.pdb
+F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\FigKey.CodeGenerator\obj\Debug\FigKey.CodeGenerator.csproj.CoreCompileInputs.cache

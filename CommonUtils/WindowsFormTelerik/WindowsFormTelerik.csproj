@@ -216,6 +216,7 @@
     <Compile Include="ControlCommon\RadGridViewProperties.cs" />
     <Compile Include="GridViewExportData\CSVHelper.cs" />
     <Compile Include="GridViewExportData\ExcelHelper.cs" />
+    <Compile Include="GridViewExportData\ExcelHelper2.cs" />
     <Compile Include="GridViewExportData\GridViewExport.cs" />
     <Compile Include="GridViewExportData\OfficeExcel.cs" />
     <Compile Include="GridViewExportData\RadGridViewHelper.cs" />

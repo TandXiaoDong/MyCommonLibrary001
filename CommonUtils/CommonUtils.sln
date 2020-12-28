@@ -65,6 +65,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SuperSocket", "SuperSocket"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperSocketUtils", "SuperSocketUtils\SuperSocketUtils.csproj", "{4D5F5C38-5E42-4FE1-A106-450A32C8BCB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFunc", "TestFunc\TestFunc.csproj", "{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,14 @@ Global
 		{4D5F5C38-5E42-4FE1-A106-450A32C8BCB4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D5F5C38-5E42-4FE1-A106-450A32C8BCB4}.Release|x86.ActiveCfg = Release|Any CPU
 		{4D5F5C38-5E42-4FE1-A106-450A32C8BCB4}.Release|x86.Build.0 = Release|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -188,6 +198,7 @@ Global
 		{11F2F1B7-B8B6-4A86-9D93-2FCF04D5B18B} = {7A96A327-2A37-47D0-B321-AD40E56E1516}
 		{3092C0B2-8CC3-4EFB-B5F5-E46DA13EBDCC} = {5A979421-934F-4CD4-A8D6-A814B95C2D35}
 		{4D5F5C38-5E42-4FE1-A106-450A32C8BCB4} = {3092C0B2-8CC3-4EFB-B5F5-E46DA13EBDCC}
+		{AF8AB6C1-FA1C-4E8C-9396-D40770FB6B5A} = {0B5F1726-265A-468B-BF62-080C15A87F35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B7749BF-36B7-4B34-9F03-B6AAF9CC206F}

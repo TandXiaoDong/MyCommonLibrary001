@@ -32,3 +32,4 @@ F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGenerat
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.csproj.CopyComplete
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.exe
 F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.pdb
+F:\work\MyRepository\CommonRepository\MyCommonLibrary001\CommonUtils\CodeGeneratorTest\obj\Debug\CodeGeneratorTest.csproj.CoreCompileInputs.cache
