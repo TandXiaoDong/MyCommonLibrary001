@@ -67,7 +67,7 @@ namespace WindowsFormTelerik.ControlCommon
                     obj.TextAlignment = ContentAlignment.MiddleCenter;
                     for (int i = 0; i < gridView.ColumnCount; i++)
                     {
-                        gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);
+                        gridView.Columns[i].ConditionalFormattingObjectList.Add(obj);//多线程中使用时，要释放已添加的对象，否则会导致内存增加问题
                     }
                 }
             }
