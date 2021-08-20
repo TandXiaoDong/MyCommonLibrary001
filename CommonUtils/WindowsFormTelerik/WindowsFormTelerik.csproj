@@ -214,6 +214,9 @@
     <Compile Include="CommonUtils\FileSelect.cs" />
     <Compile Include="ControlCommon\FontRool.cs" />
     <Compile Include="ControlCommon\RadGridViewProperties.cs" />
+    <Compile Include="ControlCommon\Wf_ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GridViewExportData\CSVHelper.cs" />
     <Compile Include="GridViewExportData\ExcelHelper.cs" />
     <Compile Include="GridViewExportData\ExcelHelper2.cs" />
@@ -294,6 +297,9 @@
   <ItemGroup>
     <Content Include="RegisterBind\说明.txt" />
     <None Include="Resources\movieLab-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
