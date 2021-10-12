@@ -10,6 +10,14 @@ namespace WindowsFormTelerik.GridViewExportData
 {
     public class RadGridViewHelper
     {
+        private void ListView1_CellFormatting(object sender, ListViewCellFormattingEventArgs e)
+        {
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter;
+            //e.CellElement.BackColor = ColorTranslator.FromHtml("#D3D7DE");
+            e.CellElement.BorderBottomShadowColor = ColorTranslator.FromHtml("#D3D7DE");//列头底部线
+            e.CellElement.BorderRightShadowColor = ColorTranslator.FromHtml("#D3D7DE");
+        }
+
         public static DataTable ConvertGridViewToDataTable(RadGridView gridView, bool IsIncludeFirstCol)
         {
             DataTable dt = new DataTable();
